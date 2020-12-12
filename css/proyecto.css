@@ -36,7 +36,7 @@
  font-size: 14px;
 }
 body {
-  background-image:url(../imagenes/fondo.png);
+  background-image:url(../imagenes/fondo.jpg);
     
 }
 .imagen:hover {filter: grayscale(80%);}

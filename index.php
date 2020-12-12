@@ -3,7 +3,8 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>UTI</title>
+	<title>Catastros</title>
+	
 	<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.8.8/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.8.8/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="css/proyecto.css">
@@ -26,14 +27,14 @@
 </head>
 <body >
 
- 
+
      <div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('imagenes/fondo.jpg');" >
 			<div class="wrap-login100">
 				<form class="login100-form validate-form"id="ff" method="post"
           onsubmit="return submitForm();">
 					<span class="login100-form-logo">
-						<i ><img src="imagenes/uti-logo.jpg"   height="60px"  > </img></i>
+						<i ><img src="imagenes/logo.jpg"   height="60px"  > </img></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
@@ -77,22 +78,24 @@
 
        if( isset($_POST["txtusuario"]) &&  isset($_POST["txtpassword"])   )
         {
-            $txtusuario = pg_escape_string( $_POST['txtusuario']);
-            $txtpassword = pg_escape_string( $_POST['txtpassword']); 
+            $txtusuario =   $_POST['txtusuario'];
+            $txtpassword =   $_POST['txtpassword']; 
             $sql = "SELECT * FROM  usuario where
-             login='$txtusuario' and password='$txtpassword' ";
-            $result = pg_query($dbconn, $sql);
+             usuario='$txtusuario' and contraseña='$txtpassword' ";
+            $result = mysqli_query($con, $sql);
             if ($result == false) {
                 echo  "Ocurrió un error en la consulta" ;
                exit;
             }  
-            $row = pg_fetch_assoc($result) ;
-            if( isset($row['nombre']) == false){
+            $row = mysqli_fetch_assoc($result) ;
+            if( isset($row['prop_nombre']) == false){
                 $mensaje ="Usuario y Clave Incorrecto";
             } 
             else{                 
                
-                  $_SESSION['usuario'] = $row['nombre'];                 
+				  $_SESSION['usuario'] = $row['prop_nombre'] ;
+				  $_SESSION['usuario1'] = $row['prop_apellido'] ; 
+				               
                   header("location: main.php") ;
                 }
                    

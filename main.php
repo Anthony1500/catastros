@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-	<title>UTI</title>
- 
+	<meta charset="utf-8">
+	
+	<title>Catastros</title>
+	
+	<link rel="icon" type="image/png" href="imagenes/icons/img.png"/>
     <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.8.8/themes/bootstrap/easyui.css">
 	<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.8.8/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="css/proyecto.css">
@@ -23,7 +26,7 @@
         <div data-options="region:'north'" style="height:60px"> 
         <img src="imagenes/uti-logo.jpg"   height="50px"  > </img>
          <div class="titulousuario">
-		 <a style="color:blue";>Usuario:</a><font style="text-transform: uppercase;"><strong> <?php echo $_SESSION['usuario']; ?> </strong></font> 
+		 <a style="color:blue";>Usuario:</a><font style="text-transform: uppercase;"><strong> <?php echo $_SESSION['usuario'] , "&nbsp;",$_SESSION['usuario1'];  ?> </strong></font> 
 
 
 			<a class="boton_personalizado" href="index.php"> Salir </a>

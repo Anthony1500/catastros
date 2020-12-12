@@ -1,8 +1,14 @@
 <?php 
-$conn_string = "host=localhost port=5433 dbname=Inventario user=postgres password=sa";
-$dbconn = pg_connect($conn_string);  
-if ($dbconn == false ) {
-   echo "Ocurrió un error en la coneccion";
-   exit;
- }
+ $serverName = "localhost:3310";
+ $username = "root";
+ $password = "";
+$db="catastros";
+$con = mysqli_connect($serverName,$username,$password,$db);  
+
+
+ if ($con == false ) {
+    echo "Conexión fallida con  la base de datos";
+    exit;
+  }
+
 ?>
