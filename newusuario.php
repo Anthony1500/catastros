@@ -3,22 +3,26 @@
        
        
             <div style="margin-bottom:5px">
-                <input name="login" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:50%">
+                <input name="cod_log" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:50%">
             </div>
+
             <div style="margin-bottom:5px">
-                <input name="nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+            </div> 
+            <div style="margin-bottom:5px">
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
+            </div> 
+            <div style="margin-bottom:5px">
+                <input name="usuario" labelPosition="top" class="easyui-textbox" required="true" label="usuario" style="width:50%" >
             </div>              
             <div style="margin-bottom:5px">
-                <input id="password" name="password" labelPosition="top" class="easyui-passwordbox" required="true" label="Password:" style="width:50%" >
-            </div> 
-            <div style="margin-bottom:5px">
-                 <input  id="repassword" name="repassword"  validType="confirmPass['#password']" class="easyui-passwordbox" labelPosition="top"   iconWidth="28" required="true" label="Repetir Password:" style="width:50%" >
+                <input id="contraseña" name="contraseña" labelPosition="top" class="easyui-passwordbox" required="true" label="Password:" style="width:50%" >
             </div> 
             
             
+
            
-    
-            
+           
          
 
         </form>
@@ -54,7 +58,7 @@
                             title: 'exito',
                             msg: result
                         });
-                    window.location.href= 'main.php?pag=listaadministrador';
+                    window.location.href= 'main.php?pag=listausuario';
                 }
             }); 
         }

@@ -40,10 +40,12 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{ 
-                $login = $_POST['login']; 
-                $password = $_POST['password'];   
-                $nombre= $_POST['nombre']; 
-                $sql = "INSERT INTO usuario(login, password, nombre) VALUES ('$login','$password','$nombre');"; 
+                $cod_log = $_POST['cod_log']; 
+                $prop_nombre = $_POST['prop_nombre'];   
+                $prop_apellido = $_POST['prop_apellido']; 
+                $usuario = $_POST['usuario'];   
+                $contraseña = $_POST['contraseña']; 
+                $sql = "INSERT INTO login(cod_log, prop_nombre, prop_apellido, usuario, contraseña ) VALUES ('$cod_log','$prop_nombre','$prop_apellido','$usuario','$contraseña');"; 
                 $insert = pg_query($dbconn,$sql); 
                  
                 if($insert){ 
