@@ -25,7 +25,7 @@
    
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
-        <a  href="main.php?pag=listaadministrador" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
+        <a  href="main.php?pag=listausuario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
     

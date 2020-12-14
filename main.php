@@ -18,7 +18,7 @@
  session_start();
  if( isset(  $_SESSION['usuario']) ==false)
  header("location: index.php") ;
- //si existe el usuario se queda en la pagina sino se redirecciona al login
+ //si existe el usuario se queda en la pagina si no se redirecciona al login
 ?>
 <body class="easyui-layout">
           
@@ -36,7 +36,7 @@
 
         
        
-        <div data-options="region:'west',split:true" title="Menu" style="width:200px;">
+		<div data-options="region:'west',split:true" title="Menu" style="width:200px;">
         
         <ul class="easyui-tree">
 			<li>
@@ -52,33 +52,19 @@
 						
 							
 							<li>
-								   <a  href="main.php?pag=listaadministrador"> Ingreso Usuario  </a> 
+								   <a  href="main.php?pag=listausuario"> Ingreso credenciales </a> 
 							</li>
 							</ul>
 							</li>
 							<li>
-						<span>Administracion de Bodegas</span>
+						<span>Administracion de usuarios</span>
 						<ul>
 							<li>
-							<a  href="main.php?pag=listabodega"> Ingreso Bodega </a>
-							</li>
-							<li>
-							<a  href="main.php?pag=listaequipo"> Ingreso Equipo  </a>
+							<a  href="main.php?pag=listabodega"> Ingreso usuarios </a>
 							</li>
 							</ul>
-							</li>
-							<li>
-						<span>Registro de prestamos</span>
-						<ul>
-							<li>
-							<a  href="main.php?pag=listaprestamista"> Ingreso Prestamista </a>
-							</li>
-							<li>
-							<a  href="main.php?pag=listaprestamo"> Ingreso Prestamo </a>
 							</li>
 							
-							</ul>
-							</li>
 							<li>
 						<span>Reportes</span>
 						<ul>

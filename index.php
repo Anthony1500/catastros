@@ -80,7 +80,7 @@
         {
             $txtusuario =   $_POST['txtusuario'];
             $txtpassword =   $_POST['txtpassword']; 
-            $sql = "SELECT * FROM  usuario where
+            $sql = "SELECT * FROM  login where
              usuario='$txtusuario' and contraseña='$txtpassword' ";
             $result = mysqli_query($con, $sql);
             if ($result == false) {

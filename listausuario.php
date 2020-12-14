@@ -7,9 +7,11 @@
         <thead>
             <tr>    
                   
-                <th field="login" width="25%">LOGIN</th>
-                <th field="password" width="25%">PASSWORD</th>
-                <th field="nombre" width="25%">NOMBRE</th>
+                <th field="cod_log" width="25%">CODIGO</th>
+                <th field="prop_nombre" width="25%">NOMBRE</th>
+                <th field="prop_apellido" width="25%">APELLIDO</th>
+                <th field="usuario" width="25%">USUARIO</th>
+                <th field="contraseña" width="25%">CONTRASEÑA</th>
              
                 
             </tr>

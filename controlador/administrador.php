@@ -17,10 +17,10 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion." where login || password like '%".$filtro."%' ";
+        $condicion=$condicion." where usuario || contraseña like '%".$filtro."%' ";
         
         }
-            $resultqry = pg_query($dbconn,"SELECT * FROM usuario".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * FROM login".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -28,7 +28,7 @@ switch ($op) {
             $result = array();
             $items = array();  
          
-            while($row = pg_fetch_object($resultqry)) {
+            while($row = mysqli_fetch_object($resultqry)) {
                array_push($items, $row);
             }
             $result["rows"] = $items;
