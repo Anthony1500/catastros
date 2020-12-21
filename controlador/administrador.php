@@ -40,15 +40,15 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{ 
-                $cod_log = $_POST['codigo']; 
+               // $cod_log = $_POST['codigo']; 
                 $prop_nombre = $_POST['nombre'];   
                 $prop_apellido = $_POST['apellido']; 
                 $usuario = $_POST['usuario'];   
                 $contraseña = $_POST['contraseña']; 
-                $sql = "INSERT INTO login(cod_log, prop_nombre, prop_apellido, usuario, contraseña ) VALUES ('$cod_log','$prop_nombre','$prop_apellido','$usuario','$contraseña')"; 
+                $sql = "INSERT INTO login(prop_nombre,prop_apellido,usuario,contraseña) VALUES ('$prop_nombre','$prop_apellido','$usuario','$contraseña')"; 
                
                 echo $sql;
-                $insert = mysqli_query($dbconn,$sql); 
+                $insert = mysqli_query($con,$sql); 
                  
                 if($insert){ 
                     $response['status'] = 1; 
@@ -56,7 +56,7 @@ switch ($op) {
                 } 
                 else{
                     $response['status'] = 0; 
-                    $response['msg'] =  mysqli_result_error($insert); 
+                    //$response['msg'] =  mysqli_result($insert); 
 
                 }
     }
@@ -116,12 +116,12 @@ switch ($op) {
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['login'] )  ){ 
-                $login = $_POST['login']; 
+            if(!empty($_POST['cod_log'] )  ){ 
+                $login = $_POST['cod_log']; 
            
               
-                $sql = " delete from usuario where login ='$login'"; 
-                $delete = pg_query($sql); 
+                $sql = " delete from login where cod_log ='$login'"; 
+                $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 
                     $response['status'] = 1; 

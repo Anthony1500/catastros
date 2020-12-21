@@ -48,7 +48,7 @@
                     if (r){
                         $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-                        $.post('controlador/administrador.php?op=delete',{login:row.login},function(result){
+                        $.post('controlador/administrador.php?op=delete',{cod_log:row.cod_log},function(result){
                             $.messager.progress('close');     
                             
                             if (result.success){

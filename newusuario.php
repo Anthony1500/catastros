@@ -2,9 +2,7 @@
 <form id="usuario" method="post"     style="margin:0;padding:20px 50px">
        
        
-            <div style="margin-bottom:5px">
-                <input name="codigo" labelPosition="top" class="easyui-textbox" required="true" label=" Cod_Login:" style="width:50%">
-            </div>
+           
 
             <div style="margin-bottom:5px">
                 <input name="nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
