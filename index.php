@@ -29,12 +29,12 @@
 
 
      <div class="limiter">
-		<div class="container-login100" style="background-image: url('imagenes/fondo.jpg');" >
+		<div class="container-login100" style="background-image: url('imagenes/paisaje.jpg');" >
 			<div class="wrap-login100">
 				<form class="login100-form validate-form"id="ff" method="post"
           onsubmit="return submitForm();">
 					<span class="login100-form-logo">
-						<i ><img src="imagenes/logo.jpg"   height="60px"  > </img></i>
+						<i ><img src="imagenes/descarga.png"   height="60px"  > </img></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
