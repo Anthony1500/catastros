@@ -40,18 +40,25 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{ 
-                $cod_log = $_POST['cod_log']; 
-                $prop_nombre = $_POST['prop_nombre'];   
-                $prop_apellido = $_POST['prop_apellido']; 
+                $cod_log = $_POST['codigo']; 
+                $prop_nombre = $_POST['nombre'];   
+                $prop_apellido = $_POST['apellido']; 
                 $usuario = $_POST['usuario'];   
                 $contraseña = $_POST['contraseña']; 
-                $sql = "INSERT INTO login(cod_log, prop_nombre, prop_apellido, usuario, contraseña ) VALUES ('$cod_log','$prop_nombre','$prop_apellido','$usuario','$contraseña');"; 
-                $insert = pg_query($dbconn,$sql); 
+                $sql = "INSERT INTO login(cod_log, prop_nombre, prop_apellido, usuario, contraseña ) VALUES ('$cod_log','$prop_nombre','$prop_apellido','$usuario','$contraseña')"; 
+               
+                echo $sql;
+                $insert = mysqli_query($dbconn,$sql); 
                  
                 if($insert){ 
                     $response['status'] = 1; 
                     $response['msg'] = '¡Los datos del usuario se han agregado con éxito!'; 
                 } 
+                else{
+                    $response['status'] = 0; 
+                    $response['msg'] =  mysqli_result_error($insert); 
+
+                }
     }
     
     catch (Exception $e){ //usar logs
@@ -75,7 +82,7 @@ switch ($op) {
                 $nombre= $_POST['nombre']; 
             
                
-                $sql = "UPDATE usuario SET  password='$password',nombre='$nombre' WHERE login='$login'";
+                $sql = "UPDATE l SET  password='$password',nombre='$nombre' WHERE login='$login'";
                 $update = pg_query($sql); 
                  
                 if($update){ 

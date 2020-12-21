@@ -61,9 +61,9 @@
                                
                                 <li class="app-sidebar__heading">&nbsp;&nbsp;Administracion</li>
                                 <li>
-                                    <a href="main.php?pag=listabodega">
+                                    <a href="main.php?pag=listapropietario">
                                         <i class="metismenu-icon pe-7s-display2"></i>
-                                        Ingreso usuarios
+                                        Ingreso propietario
                                     </a>
                                 </li>
                                

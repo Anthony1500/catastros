@@ -1,29 +1,23 @@
 <div id="p" class="easyui-panel" title="Ingreso de Administrador" style="width:100%;height:100%; ">
-<form id="frmadministrador" method="post"     style="margin:0;padding:20px 50px">
+<form id="usuario" method="post"     style="margin:0;padding:20px 50px">
        
        
             <div style="margin-bottom:5px">
-                <input name="cod_log" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:50%">
+                <input name="codigo" labelPosition="top" class="easyui-textbox" required="true" label=" Cod_Login:" style="width:50%">
             </div>
 
             <div style="margin-bottom:5px">
-                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+                <input name="nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
+                <input name="apellido" labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="usuario" labelPosition="top" class="easyui-textbox" required="true" label="usuario" style="width:50%" >
             </div>              
             <div style="margin-bottom:5px">
-                <input id="contraseña" name="contraseña" labelPosition="top" class="easyui-passwordbox" required="true" label="Password:" style="width:50%" >
+                <input  name="contraseña" labelPosition="top" class="easyui-passwordbox" required="true" label="contraseña:" style="width:50%" >
             </div> 
-            
-            
-
-           
-           
-         
 
         </form>
    
@@ -38,7 +32,7 @@
        
       
         function saveUser(){              
-           $('#frmadministrador').form('submit',{
+           $('#usuario').form('submit',{
                 url: 'controlador/administrador.php?op=insert',
                 onSubmit: function(){
                     var esvalido =  $(this).form('validate');

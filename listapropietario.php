@@ -1,17 +1,18 @@
 <table id="dg" title="Lista de Equipo" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
-            url="controlador/equipo.php?op=select"
+            url="controlador/usuario.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="cod_equipo" width="25%">Codigo Equipo</th>
-                <th field="nombre" width="25%">Nombre</th>
-                <th field="marca" width="25%">Marca</th>
-                <th field="modelo" width="25%">Modelo</th>
-                <th field="serie" width="25%">Serie</th>
-                <th field="detalle" width="25%">Detalle</th>
-                <th field="codigouti" width="25%">Codigo UTI</th>
-                <th field="cod_bodega" width="25%">Codigo Bodega</th>
+                <th field="prop_id" width="25%">Id Propetario</th>
+                <th field="prop_nombre" width="25%">Nombre</th>
+                <th field="prop_apellido" width="25%">Apellido</th>
+                <th field="prop_edad" width="25%">Edad</th>
+                <th field="prop_direccion" width="25%">Direccion</th>
+                <th field="prop_ecivil" width="25%">Estado civil</th>
+                <th field="prop_correo" width="25%">Correo</th>
+                <th field="prop_cedula" width="25%">Cedula</th>
+                <th field="prop_telefono" width="25%">Telefono</th>
             </tr>
         </thead>
     </table> 
