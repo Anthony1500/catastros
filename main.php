@@ -26,7 +26,7 @@
           
  
         <div data-options="region:'north'" style="height:60px"> 
-        <img src="imagenes/logoecuador.gif"   height="50px"  > </img>
+        <img src="imagenes/descargaaaaa.jpg"   height="50px"  > </img>
          <div class="titulousuario">
 		 <a style="color:blue";>Usuario:</a><font style="text-transform: uppercase;"><strong> <?php echo $_SESSION['usuario'] , "&nbsp;",$_SESSION['usuario1'];  ?> </strong></font> 
 
