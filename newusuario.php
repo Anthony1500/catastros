@@ -5,10 +5,10 @@
            
 
             <div style="margin-bottom:5px">
-                <input name="nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="apellido" labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="usuario" labelPosition="top" class="easyui-textbox" required="true" label="usuario" style="width:50%" >
@@ -16,7 +16,7 @@
             <div style="margin-bottom:5px">
                 <input  name="contraseña" labelPosition="top" class="easyui-passwordbox" required="true" label="contraseña:" style="width:50%" >
             </div> 
-
+        
         </form>
    
         <div style="text-align:center;padding:5px 0">

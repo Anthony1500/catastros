@@ -41,8 +41,8 @@ switch ($op) {
             );          
             try{ 
                // $cod_log = $_POST['codigo']; 
-                $prop_nombre = $_POST['nombre'];   
-                $prop_apellido = $_POST['apellido']; 
+                $prop_nombre = $_POST['prop_nombre'];   
+                $prop_apellido = $_POST['prop_apellido']; 
                 $usuario = $_POST['usuario'];   
                 $contraseña = $_POST['contraseña']; 
                 $sql = "INSERT INTO login(prop_nombre,prop_apellido,usuario,contraseña) VALUES ('$prop_nombre','$prop_apellido','$usuario','$contraseña')"; 
@@ -71,19 +71,18 @@ switch ($op) {
  break; 
 
  case 'update':
-        $response = array( 
-                'status' => 0, 
-                'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
-            );          
-            if( !empty($_POST['login'])&&!empty($_POST['nombre'])   && !empty($_POST['password']) ){ 
-                
-                $login = $_POST['login']; 
-                $password = $_POST['password'];   
-                $nombre= $_POST['nombre']; 
-            
-               
-                $sql = "UPDATE l SET  password='$password',nombre='$nombre' WHERE login='$login'";
-                $update = pg_query($sql); 
+    $response = array( 
+        'status' => 0, 
+        'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
+    );          
+    if(!empty($_POST['cod_log'])&&!empty($_POST['prop_nombre']) && !empty($_POST['prop_apellido'])&& !empty($_POST['usuario'])&&!empty($_POST['contraseña'])){ 
+                $cod_log = $_POST['cod_log']; 
+                $prop_nombre = $_POST['prop_nombre'];   
+                $prop_apellido = $_POST['prop_apellido']; 
+                $usuario = $_POST['usuario'];   
+                $contraseña = $_POST['contraseña']; 
+                $sql = "UPDATE login SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',usuario='$usuario',contraseña='$contraseña' WHERE cod_log ='$cod_log'";
+               $update =  mysqli_query($sql); 
                  
                 if($update){ 
                     $response['status'] = 1; 

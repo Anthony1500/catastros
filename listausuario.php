@@ -5,7 +5,7 @@
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
-            <tr>    
+        <tr>    
                   
                 <th field="cod_log" width="25%">CODIGO</th>
                 <th field="prop_nombre" width="25%">NOMBRE</th>
@@ -15,6 +15,8 @@
              
                 
             </tr>
+
+            
         </thead>
     </table> 
    
@@ -34,7 +36,7 @@
         function editUser(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editadministrador&id='+row.login;
+                window.location.href= 'main.php?pag=editusuario&id='+row.cod_log;
             }
         }
 

@@ -4,17 +4,14 @@ if( isset($_GET["id"])   )
 {
     $id=$_GET["id"];
     $sql = "SELECT * FROM  prestamo where cod_pre='$id'";
-    $result = pg_query($dbconn, $sql);
+    $result = mysqli_query($dbconn, $sql);
     
-    $row = pg_fetch_assoc($result) ;
+    $row = mysqli_fetch_assoc($result) ;
       
     
     
 }
 ?>
-
-
-
 
 
 <div id="$id" class="easyui-panel" title="Ingreso de datos Prestamo" style="width:100%;height:100%; ">
