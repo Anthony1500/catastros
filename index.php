@@ -88,13 +88,13 @@
                exit;
             }  
             $row = mysqli_fetch_assoc($result) ;
-            if( isset($row['prop_nombre']) == false){
+            if( isset($row['nombre']) == false){
                 $mensaje ="Usuario y Clave Incorrecto";
             } 
             else{                 
                
-				  $_SESSION['usuario'] = $row['prop_nombre'] ;
-				  $_SESSION['usuario1'] = $row['prop_apellido'] ; 
+				  $_SESSION['usuario'] = $row['nombre'] ;
+				  $_SESSION['usuario1'] = $row['apellido'] ; 
 				               
                   header("location: main.php") ;
                 }
