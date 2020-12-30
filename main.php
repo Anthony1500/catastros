@@ -61,7 +61,7 @@
                                
                                 <li class="app-sidebar__heading">&nbsp;&nbsp;Administracion</li>
                                 <li>
-                                    <a href="main.php?pag=listapropietario">
+                                    <a href="main.php?pag=listausuarioactual">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Ingreso Nuevo Usuario
                                     </a>

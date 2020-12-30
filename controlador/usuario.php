@@ -22,7 +22,7 @@ switch ($op) {
         $condicion=$condicion." where propietario || contraseña like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM propietario".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * FROM usuario_actual".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -44,17 +44,28 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                $login = $_POST['login']; 
-            $password = $_POST['password'];   
-            $nombre = $_POST['nombre'];              
-            $sql = " INSERT INTO usuario(nombre,password,login) VALUES ('$nombre','$password','$login') "; 
-            $insert = pg_query($dbconn,$sql); 
+                $usu2_nombre = $_POST['usu2_nombre'];   
+                $usu2_cedula = $_POST['usu2_cedula']; 
+                $usu2_areanetaderiego1 = $_POST['usu2_areanetaderiego1'];  
+                $usu2_areanetaderiego2 = $_POST['usu2_areanetaderiego2']; 
+                $usu2_documento = $_POST['usu2_documento'];   
+                $usu2_longitud = $_POST['usu2_longitud']; 
+                $usu2_latitud = $_POST['usu2_latitud'];  
+                $usu2_observaciones = $_POST['usu2_observaciones']; 
+                $usu2_telefono = $_POST['usu2_telefono'];   
+                $usu2_direccion = $_POST['usu2_direccion']; 
+                $usu2_areatotal = $_POST['usu2_areatotal'];  
+                $sql = "INSERT INTO usuario_actual (usu2_nombre,usu2_cedula,usu2_areanetaderiego1,usu2_areanetaderiego2,usu2_documento,usu2_longitud,usu2_latitud,usu2_observaciones,usu2_telefono,usu2_direccion,usu2_areatotal) VALUES ('$usu2_nombre','$usu2_cedula','$usu2_areanetaderiego1','$usu2_areanetaderiego2','$usu2_documento','$usu2_longitud','$usu2_latitud','$usu2_observaciones','$usu2_telefono','$usu2_direccion','$usu2_areatotal')"; 
+               
+                echo $sql;
+                $insert = mysqli_query($con,$sql); 
              
             if($insert){ 
                 $response['status'] = 1; 
                 $response['msg'] = '¡Los datos del usuario se han agregado con éxito!'; 
             } 
 }
+
 
 catch (Exception $e){ //usar logs
     $response = array( 
@@ -94,10 +105,10 @@ catch (Exception $e){ //usar logs
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['login'])   ){ 
-                $login = $_POST['login']; 
+            if(!empty($_POST['usu2_codigo'])   ){ 
+                $login = $_POST['usu2_codigo']; 
               
-                $sql = " delete from usuario where login ='$login' "; 
+                $sql = " delete from usuario_actual where usu2_codigo ='$login' "; 
                 $result = pg_query($sql); 
                  
                 if ($result){

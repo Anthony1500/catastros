@@ -4,22 +4,27 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="prop_id" width="25%">Id Propetario</th>
-                <th field="prop_nombre" width="25%">Nombre</th>
-                <th field="prop_apellido" width="25%">Apellido</th>
-                <th field="prop_edad" width="25%">Edad</th>
-                <th field="prop_direccion" width="25%">Direccion</th>
-                <th field="prop_ecivil" width="25%">Estado civil</th>
-                <th field="prop_correo" width="25%">Correo</th>
-                <th field="prop_cedula" width="25%">Cedula</th>
-                <th field="prop_telefono" width="25%">Telefono</th>
+                <th field="usu2_codigo" width="25%">Codigo</th>
+                <th field="usu2_nombre" width="25%">Nombre</th>
+                <th field="usu2_cedula" width="25%">Cedula</th>
+                <th field="usu2_areanetaderiego1" width="25%">Area neta de riego1</th>
+                <th field="usu2_areanetaderiego2" width="25%">Area neta de riego2</th>
+                <th field="usu2_documento" width="25%">Documento</th>
+                <th field="usu2_longitud" width="25%">Longitud</th>
+                <th field="usu2_latitud" width="25%">Latitd</th>
+                <th field="usu2_observaciones" width="25%">Observaciones</th>
+                <th field="usu2_telefono" width="25%">Telefono</th>
+                <th field="usu2_direccion" width="25%">Direccion</th>
+                <th field="usu2_areatotal" width="25%">Area total</th>
             </tr>
+
+
         </thead>
     </table> 
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
-        <a  href="main.php?pag=newequipo" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
+        <a  href="main.php?pag=newusuarioactual" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
@@ -48,7 +53,7 @@
                     if (r){
                         $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-                        $.post('controlador/equipo.php?op=delete',{cod_equipo:row.cod_equipo},function(result){
+                        $.post('controlador/usuario.php?op=delete',{usu2_codigo:row.usu2_codigo},function(result){
                             $.messager.progress('close');     
                             
                             if (result.success){
