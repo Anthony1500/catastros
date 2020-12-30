@@ -17,10 +17,10 @@ if( isset($_GET["id"]))
                 <input name="cod_log" readonly=»readonly»  value="<?php echo $row['cod_log'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:80%">
             </div>
             <div style="margin-bottom:5px">
-                <input name="prop_nombre" value="<?php echo $row['prop_nombre'] ?>" labelPosition="top" value="<?php echo $row['prop_nombre'] ?>" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+                <input name="nombre" value="<?php echo $row['nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" value="<?php echo $row['prop_apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
+                <input name="apellido" value="<?php echo $row['apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="usuario" value="<?php echo $row['usuario'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="usuario" style="width:50%" >

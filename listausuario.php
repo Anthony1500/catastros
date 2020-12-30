@@ -8,8 +8,8 @@
         <tr>    
                   
                 <th field="cod_log" width="25%">CODIGO</th>
-                <th field="prop_nombre" width="25%">NOMBRE</th>
-                <th field="prop_apellido" width="25%">APELLIDO</th>
+                <th field="nombre" width="25%">NOMBRE</th>
+                <th field="apellido" width="25%">APELLIDO</th>
                 <th field="usuario" width="25%">USUARIO</th>
                 <th field="contraseña" width="25%">CONTRASEÑA</th>
              

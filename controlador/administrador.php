@@ -41,11 +41,11 @@ switch ($op) {
             );          
             try{ 
                // $cod_log = $_POST['codigo']; 
-                $prop_nombre = $_POST['prop_nombre'];   
-                $prop_apellido = $_POST['prop_apellido']; 
-                $usuario = $_POST['usuario'];   
+                $nombre = $_POST['nombre'];   
+                $apellido = $_POST['apellido']; 
+                $usuario = $_POST['usuario'];  
                 $contraseña = $_POST['contraseña']; 
-                $sql = "INSERT INTO login(prop_nombre,prop_apellido,usuario,contraseña) VALUES ('$prop_nombre','$prop_apellido','$usuario','$contraseña')"; 
+                $sql = "INSERT INTO login (nombre,apellido,usuario,contraseña) VALUES ('$nombre','$apellido','$usuario','$contraseña')"; 
                
                 echo $sql;
                 $insert = mysqli_query($con,$sql); 
@@ -75,13 +75,13 @@ switch ($op) {
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['cod_log'])&&!empty($_POST['prop_nombre']) && !empty($_POST['prop_apellido'])&& !empty($_POST['usuario'])&&!empty($_POST['contraseña'])){ 
+    if(!empty($_POST['cod_log'])&&!empty($_POST['nombre']) && !empty($_POST['apellido'])&& !empty($_POST['usuario'])&&!empty($_POST['contraseña'])){ 
                 $cod_log = $_POST['cod_log']; 
-                $prop_nombre = $_POST['prop_nombre'];   
-                $prop_apellido = $_POST['prop_apellido']; 
+                $nombre = $_POST['nombre'];   
+                $apellido = $_POST['apellido']; 
                 $usuario = $_POST['usuario'];   
                 $contraseña = $_POST['contraseña']; 
-                $sql = "UPDATE login SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',usuario='$usuario',contraseña='$contraseña' WHERE cod_log ='$cod_log'";
+                $sql = "UPDATE login SET  nombre='$nombre',apellido='$apellido',usuario='$usuario',contraseña='$contraseña' WHERE cod_log ='$cod_log'";
                $update = mysqli_query($con,$sql);
                  
                 if($update){ 
