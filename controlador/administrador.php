@@ -82,7 +82,7 @@ switch ($op) {
                 $usuario = $_POST['usuario'];   
                 $contraseña = $_POST['contraseña']; 
                 $sql = "UPDATE login SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',usuario='$usuario',contraseña='$contraseña' WHERE cod_log ='$cod_log'";
-               $update =  mysqli_query($sql); 
+               $update = mysqli_query($con,$sql);
                  
                 if($update){ 
                     $response['status'] = 1; 

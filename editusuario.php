@@ -4,7 +4,7 @@ if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
     $sql = "SELECT * FROM login where cod_log='$id'";
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con,$sql);
      
     $row = mysqli_fetch_assoc($result) ;
 }
