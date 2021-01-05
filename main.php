@@ -31,7 +31,7 @@
 		 <a style="color:blue";>Usuario:</a><font style="text-transform: uppercase;"><strong> <?php echo $_SESSION['usuario'] , "&nbsp;",$_SESSION['usuario1'];  ?> </strong></font> 
 
 
-			<a class="boton_personalizado" href="index.php"> Salir </a>
+			<a class="bot_personalizado" href="index.php"> Salir </a>
          </div> 
 
         </div>
@@ -61,7 +61,7 @@
                                
                                 <li class="app-sidebar__heading">&nbsp;&nbsp;Administracion</li>
                                 <li>
-                                    <a href="main.php?pag=listausuarioactual">
+                                    <a href="main.php?pag=listapropietario">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Ingreso Nuevo Usuario
                                     </a>

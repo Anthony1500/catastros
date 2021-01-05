@@ -22,7 +22,7 @@ switch ($op) {
         $condicion=$condicion." where propietario || contraseña like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM usuario_actual".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * FROM propietario".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -44,18 +44,15 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                $usu2_nombre = $_POST['usu2_nombre'];   
-                $usu2_cedula = $_POST['usu2_cedula']; 
-                $usu2_areanetaderiego1 = $_POST['usu2_areanetaderiego1'];  
-                $usu2_areanetaderiego2 = $_POST['usu2_areanetaderiego2']; 
-                $usu2_documento = $_POST['usu2_documento'];   
-                $usu2_longitud = $_POST['usu2_longitud']; 
-                $usu2_latitud = $_POST['usu2_latitud'];  
-                $usu2_observaciones = $_POST['usu2_observaciones']; 
-                $usu2_telefono = $_POST['usu2_telefono'];   
-                $usu2_direccion = $_POST['usu2_direccion']; 
-                $usu2_areatotal = $_POST['usu2_areatotal'];  
-                $sql = "INSERT INTO usuario_actual (usu2_nombre,usu2_cedula,usu2_areanetaderiego1,usu2_areanetaderiego2,usu2_documento,usu2_longitud,usu2_latitud,usu2_observaciones,usu2_telefono,usu2_direccion,usu2_areatotal) VALUES ('$usu2_nombre','$usu2_cedula','$usu2_areanetaderiego1','$usu2_areanetaderiego2','$usu2_documento','$usu2_longitud','$usu2_latitud','$usu2_observaciones','$usu2_telefono','$usu2_direccion','$usu2_areatotal')"; 
+                $prop_nombre = $_POST['prop_nombre'];   
+                $prop_apellido = $_POST['prop_apellido']; 
+                $prop_edad = $_POST['prop_edad'];   
+                $prop_direccion = $_POST['prop_direccion']; 
+                $prop_ecivil = $_POST['prop_ecivil'];  
+                $prop_correo = $_POST['prop_correo']; 
+                $prop_cedula = $_POST['prop_cedula'];   
+                $prop_telefono = $_POST['prop_telefono']; 
+                $sql = "INSERT INTO propietario (prop_nombre,prop_apellido,prop_edad,prop_direccion,prop_ecivil,prop_correo,prop_cedula,prop_telefono) VALUES ('$prop_nombre','$prop_apellido','$prop_edad','$prop_direccion','$prop_ecivil','$prop_correo','$prop_cedula','$prop_telefono')"; 
                
                 echo $sql;
                 $insert = mysqli_query($con,$sql); 
@@ -78,51 +75,55 @@ catch (Exception $e){ //usar logs
  break; 
 
  case 'update':
-        $response = array( 
-                'status' => 0, 
-                'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
-            );          
-            if(!empty($_POST['login']) && !empty($_POST['nombre']) && !empty($_POST['password'])  ){ 
-                $login = $_POST['login']; 
-                $nombre = $_POST['nombre'];   
-                $password = $_POST['password'];
-             $sql = "UPDATE usuario SET  nombre='$nombre', password='$password' WHERE login='$login";
-            $update = pg_query($sql); 
-             
-            if($update){ 
-                $response['status'] = 1; 
-                $response['msg'] = '¡Los datos del usuario se han actualizado con éxito!'; 
+    $response = array( 
+        'status' => 0, 
+        'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
+    );          
+    if(!empty($_POST['prop_id'])&&!empty($_POST['prop_nombre']) && !empty($_POST['prop_apellido'])&& !empty($_POST['prop_edad'])&&!empty($_POST['prop_direccion'])&& !empty($_POST['prop_ecivil'])&& !empty($_POST['prop_correo'])&& !empty($_POST['prop_cedula'])&&!empty($_POST['prop_telefono'])){ 
+        $prop_id = $_POST['prop_id'];   
+        $prop_nombre = $_POST['prop_nombre'];   
+        $prop_apellido = $_POST['prop_apellido']; 
+        $prop_edad = $_POST['prop_edad'];   
+        $prop_direccion = $_POST['prop_direccion']; 
+        $prop_ecivil = $_POST['prop_ecivil'];  
+        $prop_correo = $_POST['prop_correo']; 
+        $prop_cedula = $_POST['prop_cedula'];   
+        $prop_telefono = $_POST['prop_telefono']; 
+                $sql = "UPDATE propietario SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',prop_edad='$prop_edad',prop_direccion='$prop_direccion',prop_ecivil='$prop_ecivil',prop_correo='$prop_correo',prop_cedula='$prop_cedula',prop_telefono='$prop_telefono' WHERE prop_id ='$prop_id'";
+               $update = mysqli_query($con,$sql);
+                 
+                if($update){ 
+                    $response['status'] = 1; 
+                    $response['msg'] = '¡Los datos del usuario se han actualizado con éxito!'; 
+                } 
+            }else{ 
+                $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
             } 
-        }else{ 
-            $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
-        } 
-         
-        echo json_encode($response); 
+             
+            echo json_encode($response); 
 
-    break; 
+ break;  
  case 'delete':
         $response = array( 
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['usu2_codigo'])   ){ 
-                $login = $_POST['usu2_codigo']; 
+            if(!empty($_POST['prop_id'])   ){ 
+                $prop_id = $_POST['prop_id']; 
               
-                $sql = " delete from usuario_actual where usu2_codigo ='$login' "; 
-                $result = pg_query($sql); 
+                $sql = " delete from propietario where prop_id ='$prop_id' "; 
+                $delete = mysqli_query($con,$sql); 
                  
-                if ($result){
-                        echo json_encode(array('success'=>true));
-                } else {
-                        echo json_encode(array('errorMsg'=>'Some errors occured.'));
-                }
+                if($delete){ 
+                    $response['status'] = 1; 
+                    $response['msg'] = '¡Los datos del usuario se han eliminado con éxito!'; 
+                } 
             }else{ 
                 $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
-            } 
-             
-            
-
+            }             
+            echo json_encode($response); 
  break; 
+ 
     default:
             echo json_encode( "Error no existe la opcion ".$op);
 
