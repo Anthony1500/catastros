@@ -59,19 +59,37 @@
                                 </li>
                                 
                                
-                                <li class="app-sidebar__heading">&nbsp;&nbsp;Administracion</li>
+                                <li class="app-sidebar__heading">&nbsp;&nbsp;Administración</li>
                                 <li>
                                     <a href="main.php?pag=listapropietario">
                                         <i class="metismenu-icon pe-7s-display2"></i>
-                                        Ingreso Nuevo Usuario
+                                        Propietario
                                     </a>
+                                    <a href="main.php?pag=listausuarioactual">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Propiedad
+                                    </a>
+                                    <a href="main.php?pag=listausuarioactual">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Riego
+                                    </a>
+                                    <a href="main.php?pag=listausuarioactual">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Cobro
+                                    </a>
+                                    <a href="main.php?pag=listausuarioactual">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Usuarios
+                                    </a>
+                                    <a href="main.php?pag=listausuarioactual">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Reportes   
+                                        </a>                                 
                                 </li>
-                               
-                                <li class="app-sidebar__heading">&nbsp;&nbsp;Mapa</li>
+                                <li class="app-sidebar__heading">&nbsp;Mapa</li>
                                 <li>
                                     <a  href="main.php?pag=mapa" >
-                                        <i class="metismenu-icon pe-7s-graph2">
-                                        </i>
+                                        <i class="metismenu-icon pe-7s-graph2"></i>
                                         mapa
                                     </a>
                                 </li>
