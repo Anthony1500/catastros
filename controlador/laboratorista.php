@@ -87,7 +87,7 @@ switch ($op) {
  case 'selectcombo':
     $resultqry = pg_query($dbconn, 'SELECT * FROM laboratorista ' );
     if (!$resultqry) {
-    echo json_enconde("Ocurrió un error en la consulta");
+    
     exit;
     }
     
