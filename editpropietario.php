@@ -29,6 +29,8 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="prop_ecivil" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_ecivil']?>" required="true" label="Direccion :" style="width:50%" >
             </div>
+
+            
             <div style="margin-bottom:5px">
                 <input name="prop_direccion" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_direccion']?>"  required="true" label="Estado civil :" style="width:50%" >
             </div> 
