@@ -3,10 +3,10 @@
            
 
 <div style="margin-bottom:5px">
-                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre :" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="Apellido :" style="width:50%" >
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="Apellido Completo :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox" required="true" label="Edad :" style="width:50%" >
