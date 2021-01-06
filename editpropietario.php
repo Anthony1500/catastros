@@ -11,17 +11,17 @@ if( isset($_GET["id"]))
 
 ?>
 
-<div id="$id" class="easyui-panel" title="Lista de Equipo" style="width:100%;height:100%; ">
+<div id="$id" class="easyui-panel" title="Datos Propietario" style="width:100%;height:100%; ">
 <form id="frmequipo" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Equipo:" style="width:50%"/>
+                <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
-                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_nombre']?>"  required="true" label="Nombre :" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_nombre']?>"  required="true" label="Nombre Completo  :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_apellido']?>" required="true" label="Apellido :" style="width:50%" >
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_apellido']?>" required="true" label="Apellido Completo :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_edad']?>" required="true" label="Edad :" style="width:50%" >

@@ -1,4 +1,4 @@
-<div id="p" class="easyui-panel" title="Ingreso de datos Bodega" style="width:100%;height:100%; ">
+<div id="p" class="easyui-panel" title="Ingreso de Propietario" style="width:100%;height:100%; ">
 <form id="frmequipo" method="post"     style="margin:0;padding:20px 50px">
            
 
