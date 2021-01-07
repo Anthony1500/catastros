@@ -83,7 +83,7 @@
                                     </a>
                                     <a href="main.php?pag=listausuarioactual">
                                         <i class="metismenu-icon pe-7s-display2"></i>
-                                        Reportes   
+                                        Reporte   
                                         </a>                                 
                                 </li>
                                 <li class="app-sidebar__heading">&nbsp;Mapa</li>
