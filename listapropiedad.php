@@ -37,7 +37,7 @@
         function editUser(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editpropiedad&id='+row.prop_id;
+                window.location.href= 'main.php?pag=editpropiedad&id='+row.propi_id;
             }
         }
        

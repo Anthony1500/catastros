@@ -54,8 +54,8 @@ switch ($op) {
                 $propi_ciudad = $_POST['propi_ciudad']; 
                 $propi_parroquia = $_POST['propi_parroquia']; 
                 
-                $sql = "INSERT INTO catastros.propiedad (propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia) 
-                VALUES ('$prop_id','$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia')"; 
+                $sql = "INSERT INTO propiedad (propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia) 
+                VALUES ('$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia')"; 
                
                
 

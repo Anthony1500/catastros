@@ -3,7 +3,7 @@ require ('controlador/coneccion.php');
 if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
-    $sql = "SELECT * FROM propiedad where prop_id='$id'";
+    $sql = "SELECT * FROM propiedad where propi_id='$id'";
     $result = mysqli_query($con,$sql);
      
     $row = mysqli_fetch_assoc($result) ;
@@ -15,7 +15,7 @@ if( isset($_GET["id"]))
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario " style="width:50%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
                 <input name="propi_metros" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_metros']?>"  required="true" label="Metros " style="width:50%" >
