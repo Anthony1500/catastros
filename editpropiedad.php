@@ -11,14 +11,14 @@ if( isset($_GET["id"]))
 
 ?>
 
-<div id="$id" class="easyui-panel" title="Datos Propiedad" style="width:100%;height:100%; ">
+<div id="$id" class="easyui-panel" title="Editar Propiedad" style="width:100%;height:100%; ">
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
                 <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario " style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
-                <input name="propi_metros" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_metros']?>"  required="true" label="Metros  " style="width:50%" >
+                <input name="propi_metros" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_metros']?>"  required="true" label="Metros " style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="propi_longitud" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['propi_longitud']?>" required="true" label="Longitud " style="width:50%" >
@@ -28,7 +28,7 @@ if( isset($_GET["id"]))
             </div>              
             
             <div style="margin-bottom:5px">
-                <input name="propi_sector" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_sector']?>"  required="true" label="Sector :" style="width:50%" >
+                <input name="propi_sector" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_sector']?>"  required="true" label="Sector " style="width:50%" >
             </div> 
                       
             <div style="margin-bottom:5px">

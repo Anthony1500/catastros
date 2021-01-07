@@ -4,14 +4,14 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="propi_id" width="25%">Codigo</th>
-                <th field="prop_id" width="25%">Codigo propietario</th>
+                <th field="propi_id" width="25%">Codigo Propiedad</th>
+                <th field="prop_id" width="25%">Codigo Propietario</th>
                 <th field="propi_metros" width="25%">Metros </th>
                 <th field="propi_longitud" width="25%">Longitud</th>
                 <th field="propi_latitud" width="25%">Latitud</th>
                 <th field="propi_sector" width="25%">Sector</th>
-                <th field="propi_calleprincipal" width="25%">Calle principal</th>
-                <th field="propi_callesecundaria" width="25%">Calle secundaria</th>
+                <th field="propi_calleprincipal" width="25%">Calle Principal</th>
+                <th field="propi_callesecundaria" width="25%">Calle Secundaria</th>
                 <th field="propi_ciudad" width="25%">Ciudad</th>
                 <th field="propi_parroquia" width="25%">Parroquia</th>
                 

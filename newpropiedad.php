@@ -17,31 +17,31 @@
         </div>
 
             <div style="margin-bottom:5px">
-                <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad metros :" style="width:50%" >
+                <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad metros " style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="propi_longitud" labelPosition="top" class="easyui-textbox" required="true" label=" Longitud :" style="width:50%" >
+                <input name="propi_longitud" labelPosition="top" class="easyui-textbox" required="true" label=" Longitud " style="width:50%" >
             </div>              
             <div style="margin-bottom:5px">
-                <input name="propi_latitud" labelPosition="top" class="easyui-textbox" required="true" label=" Latitud :" style="width:50%" >
+                <input name="propi_latitud" labelPosition="top" class="easyui-textbox" required="true" label=" Latitud " style="width:50%" >
             </div>
             
         
         <div style="margin-bottom:5px">
-                <input name="propi_sector" labelPosition="top" class="easyui-textbox" required="true" label=" Sector :" style="width:50%" >
+                <input name="propi_sector" labelPosition="top" class="easyui-textbox" required="true" label=" Sector " style="width:50%" >
             </div> 
                       
             <div style="margin-bottom:5px">
-                <input name="propi_calleprincipal" labelPosition="top" class="easyui-textbox" required="true" label="Calleprincipal :" style="width:50%" >
+                <input name="propi_calleprincipal" labelPosition="top" class="easyui-textbox" required="true" label="Calle Principal " style="width:50%" >
             </div>
             <div style="margin-bottom:5px">
-                <input name="propi_callesecundaria" labelPosition="top" class="easyui-textbox" required="true" label="Callesecundaria :" style="width:50%" >
+                <input name="propi_callesecundaria" labelPosition="top" class="easyui-textbox" required="true" label="Calle Secundaria " style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="propi_ciudad" labelPosition="top" class="easyui-textbox" required="true" label="Ciudad :" style="width:50%" >
+                <input name="propi_ciudad" labelPosition="top" class="easyui-textbox" required="true" label="Ciudad " style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" required="true" label="Parroquia :" style="width:50%" >
+                <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" required="true" label="Parroquia " style="width:50%" >
             </div> 
            
       </form>
