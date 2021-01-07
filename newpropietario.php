@@ -17,7 +17,14 @@
             
         
         <div style="margin-bottom:5px">
-                <input name="prop_ecivil" labelPosition="top" class="easyui-textbox" required="true" label="Estado civil :" style="width:50%" >
+                <select id="cc"label="Estado civil :" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="prop_ecivil">
+                <option  disabled="disabled"selected="selected" ></option>
+                <option >Soltero</option>
+                <option>Casado</option>
+                <option>Viudo</option>
+                <option>Divorciado</option>
+                
+            </select>
             </div> 
                       
             <div style="margin-bottom:5px">
@@ -43,8 +50,18 @@
  
     <script type="text/javascript">
        
-       
-        function saveUser(){              
+       $('#cc').combobox({
+           
+           
+           panelHeight:'150',
+           
+           onSelect: function(rec)
+           {
+            
+           }
+       });
+        function saveUser(){    
+                  
            $('#frmequipo').form('submit',{
                 url: 'controlador/usuario.php?op=insert',
                 onSubmit: function(){
