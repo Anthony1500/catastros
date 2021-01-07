@@ -12,7 +12,7 @@ if( isset($_GET["id"]))
 ?>
 
 <div id="$id" class="easyui-panel" title="Datos Propiedad" style="width:100%;height:100%; ">
-<form id="frmequipo" method="post"     style="margin:0;padding:20px 50px">
+<form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
 <div style="margin-bottom:5px">
                 <input name="prop_id" labelPosition="top" class="easyui-textbox" required="true" label="Codigo ID :" style="width:50%" >
@@ -49,7 +49,7 @@ if( isset($_GET["id"]))
    
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
-        <a  href="main.php?pag=listapropietario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
+        <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
     
@@ -59,7 +59,7 @@ if( isset($_GET["id"]))
        
       
         function saveUser(){              
-           $('#frmequipo').form('submit',{
+           $('#frmpro').form('submit',{
                 url: 'controlador/propiedad.php?op=update',
                 onSubmit: function(){
                     var esvalido =  $(this).form('validate');

@@ -37,7 +37,7 @@
    
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
-        <a  href="main.php?pag=listapropietario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
+        <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
     
@@ -46,8 +46,8 @@
        
        
         function saveUser(){              
-           $('#frmequipo').form('submit',{
-                url: 'controlador/usuario.php?op=insert',
+           $('#frmpro').form('submit',{
+                url: 'controlador/propiedad.php?op=insert',
                 onSubmit: function(){
                     var esvalido =  $(this).form('validate');
                     if( esvalido){
@@ -66,7 +66,7 @@
                             title: 'exito',
                             msg: result
                         });
-                    window.location.href= 'main.php?pag=listapropietario';
+                    window.location.href= 'main.php?pag=listapropiedad';
                 }
             }); 
         }
