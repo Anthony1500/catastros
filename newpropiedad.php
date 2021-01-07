@@ -2,9 +2,20 @@
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
 
-<div style="margin-bottom:5px">
-                <input name="prop_id" labelPosition="top" class="easyui-textbox" required="true" label="Codigo ID :" style="width:50%" >
-            </div> 
+<div  style="margin-bottom:5px">
+            <select id="prop_id"  name ="prop_id"labelPosition="top"required="true" class="easyui-combobox" 
+            style="width:50%;"  data-options="
+                    url:'controlador/propiedad.php?op=selectcombo',
+                    method:'get',
+                    valueField:'prop_id',
+                    textField:'prop_id',
+                    panelHeight:'auto',
+                    label: 'Codigo:',
+                    labelWidth:'160px'
+                    ">               
+            </select>
+        </div>
+
             <div style="margin-bottom:5px">
                 <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad metros :" style="width:50%" >
             </div> 

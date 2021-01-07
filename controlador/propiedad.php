@@ -109,7 +109,23 @@ catch (Exception $e){ //usar logs
              
             echo json_encode($response); 
 
- break;  
+ break;
+ case 'selectcombo':
+    $resultqry = mysqli_query($con, 'SELECT * FROM propietario ' );
+    if (!$resultqry) {
+    
+    exit;
+    }
+    
+    $items=array();
+ 
+    while($row = mysqli_fetch_object($resultqry)) {
+       array_push($items, $row);
+    }
+  
+    echo json_encode($items);
+    break; 
+  
  case 'delete':
         $response = array( 
                 'status' => 0, 
