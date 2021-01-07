@@ -24,6 +24,7 @@
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a  href="main.php?pag=newpropiedad" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
+        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" iconCls="icon-add" plain="true"  >Agregar propietario</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
@@ -40,7 +41,12 @@
                 window.location.href= 'main.php?pag=editpropiedad&id='+row.propi_id;
             }
         }
-       
+        function editpropi(){
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                window.location.href= 'main.php?pag=newagregarpropietario&id='+row.propi_id;
+            }
+        }
 
 
         function destroyUser(){

@@ -22,7 +22,7 @@ switch ($op) {
         $condicion=$condicion." where propiedad || contraseña like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM propiedad".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * FROM propietario_propiedad".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -45,17 +45,14 @@ switch ($op) {
             );          
             try{
                 //$propi_id = $_POST['propi_id'];   
-                $propi_metros = $_POST['propi_metros']; 
-                $propi_longitud = $_POST['propi_longitud'];   
-                $propi_latitud = $_POST['propi_latitud']; 
-                $propi_sector = $_POST['propi_sector'];  
-                $propi_calleprincipal = $_POST['propi_calleprincipal']; 
-                $propi_callesecundaria = $_POST['propi_callesecundaria'];   
-                $propi_ciudad = $_POST['propi_ciudad']; 
-                $propi_parroquia = $_POST['propi_parroquia']; 
+                $prop_id = $_POST['prop_id']; 
+                $propi_id = $_POST['propi_id'];   
+                $tipodeasignacion = $_POST['tipodeasignacion']; 
+                $fechadeasignacion = $_POST['fechadeasignacion'];  
+                 
                 
-                $sql = "INSERT INTO propiedad (propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia) 
-                VALUES ('$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia')"; 
+                $sql = "INSERT INTO propietario_propiedad (prop_id,propi_id,tipodeasignacion,fechadeasignacion) 
+                VALUES ('$prop_id','$propi_id','$tipodeasignacion','$fechadeasignacion')"; 
                
                
 
@@ -125,6 +122,21 @@ catch (Exception $e){ //usar logs
   
     echo json_encode($items);
     break; 
+    case 'selectcombo1':
+        $resultqry = mysqli_query($con, 'SELECT * FROM propiedad ' );
+        if (!$resultqry) {
+        
+        exit;
+        }
+        
+        $items=array();
+     
+        while($row = mysqli_fetch_object($resultqry)) {
+           array_push($items, $row);
+        }
+      
+        echo json_encode($items);
+        break; 
   
  case 'delete':
         $response = array( 
