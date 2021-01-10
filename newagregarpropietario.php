@@ -16,7 +16,7 @@ if( isset($_GET["id"]))
 
 
 <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:10%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:50%"/>
             </div>
            
             <div  style="margin-bottom:5px">
@@ -28,19 +28,6 @@ if( isset($_GET["id"]))
                     textField:'prop_nombre',
                     panelHeight:'auto',
                     label: 'Nombre Propietario:',
-                    labelWidth:'160px'
-                    ">               
-            </select>
-        </div> 
-        <div  style="margin-bottom:5px">
-            <select id="propi_id"  name ="propi_id"labelPosition="top"required="true" class="easyui-combobox" 
-            style="width:50%;"  data-options="
-                    url:'controlador/asignarpropietario.php?op=selectcombo1',
-                    method:'get',
-                    valueField:'propi_id',
-                    textField:'propi_id',
-                    panelHeight:'auto',
-                    label: 'Codigo Propiedad:',
                     labelWidth:'160px'
                     ">               
             </select>

@@ -69,7 +69,12 @@
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Propiedad
                                     </a>
-                                   
+
+                                    <a href="main.php?pag=listaterrenos">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Terrenos Asignados
+                                    </a>
+
                                     <a href="main.php?pag=listausuarioactual">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Riego
