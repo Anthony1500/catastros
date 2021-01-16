@@ -16,16 +16,14 @@
             </div>
             
         
-        <div style="margin-bottom:5px">
-                <select id="cc"label="Estado civil :" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="prop_ecivil">
-                <option  disabled="disabled"selected="selected" ></option>
-                <option >Soltero</option>
-                <option>Casado</option>
-                <option>Viudo</option>
-                <option>Divorciado</option>
-                
-            </select>
-            </div> 
+            <div  style="margin-bottom:5px">
+            <select name="prop_ecivil" class="easyui-combobox" name="dept"  label="Estado civil :" style="width:200px;">
+        <option>Soltero</option>
+        <option>Casado</option>
+        <option>Viudo</option>
+       <option> Divorciado</option>
+         </select>
+        </div>
                       
             <div style="margin-bottom:5px">
                 <input name="prop_correo" labelPosition="top" class="easyui-textbox" required="true" label="Correo :" style="width:50%" >
@@ -50,16 +48,7 @@
  
     <script type="text/javascript">
        
-       $('#cc').combobox({
-           
-           
-           panelHeight:'150',
-           
-           onSelect: function(rec)
-           {
-            
-           }
-       });
+      
         function saveUser(){    
                   
            $('#frmequipo').form('submit',{

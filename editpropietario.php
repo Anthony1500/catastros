@@ -25,20 +25,25 @@ if( isset($_GET["id"]))
             </div> 
             <div style="margin-bottom:5px">
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_edad']?>" required="true" label="Edad :" style="width:50%" >
-            </div>              
-            <div style="margin-bottom:5px">
-                <select id="cc" label="Estado civil :"  labelPosition="top" style="width:50%" class="combobox"required="true" name="prop_ecivil">
-                <option selected disabled hidden value=''><?php echo $row ['prop_ecivil']?></option>
-                <option  >Soltero</option>
-                <option>Casado</option>
-                <option>Viudo</option>
-                <option>Divorciado</option>
-            </select>
-            </div> 
-           
+            </div>                
+            <div  style="margin-bottom:5px">
+            <select name="prop_ecivil" class="easyui-combobox" name="dept"   value="true" label="Estado civil :"  style="width:200px;">
+            
+            
+        <option value="true" disabled="disabled" > <?php echo $row ['prop_ecivil']?></option>
+
+        <option>Soltero</option>
+        <option>Casado</option>
+        <option>Viudo</option>
+       <option> Divorciado</option>
+   
+         </select>
+         
+        </div>
+
             
             <div style="margin-bottom:5px">
-                <input name="prop_direccion" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_direccion']?>"  required="true" label="direccion :" style="width:50%" >
+                <input name="prop_direccion" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_direccion']?>"  required="true" label="Direccion :" style="width:50%" >
             </div> 
                       
             <div style="margin-bottom:5px">
@@ -62,24 +67,10 @@ if( isset($_GET["id"]))
     </div>   
     </div>
     
-
-
-	
-
-   
+ 
     <script type="text/javascript">
-      $('#cc').combobox().prop('selectedIndex', -1)
-       $('#cc').combobox({
-           
-           
-            panelHeight:'150',
-            
-            onSelect: function(rec)
-            {
-             
-            }
-        });
-
+       
+       
       
         function saveUser(){              
            $('#frmequipo').form('submit',{
