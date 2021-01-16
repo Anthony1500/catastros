@@ -52,6 +52,10 @@ switch ($op) {
                 $prop_correo = $_POST['prop_correo']; 
                 $prop_cedula = $_POST['prop_cedula'];   
                 $prop_telefono = $_POST['prop_telefono']; 
+                
+               
+               
+              
                 $sql = "INSERT INTO propietario (prop_nombre,prop_apellido,prop_edad,prop_direccion,prop_ecivil,prop_correo,prop_cedula,prop_telefono) VALUES ('$prop_nombre','$prop_apellido','$prop_edad','$prop_direccion','$prop_ecivil','$prop_correo','$prop_cedula','$prop_telefono')"; 
                
                 echo $sql;
@@ -78,7 +82,8 @@ catch (Exception $e){ //usar logs
     $response = array( 
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
-    );          
+    ); 
+    
     if(!empty($_POST['prop_id'])&&!empty($_POST['prop_nombre']) && !empty($_POST['prop_apellido'])&& !empty($_POST['prop_edad'])&&!empty($_POST['prop_direccion'])&& !empty($_POST['prop_ecivil'])&& !empty($_POST['prop_correo'])&& !empty($_POST['prop_cedula'])&&!empty($_POST['prop_telefono'])){ 
         $prop_id = $_POST['prop_id'];   
         $prop_nombre = $_POST['prop_nombre'];   
@@ -89,6 +94,7 @@ catch (Exception $e){ //usar logs
         $prop_correo = $_POST['prop_correo']; 
         $prop_cedula = $_POST['prop_cedula'];   
         $prop_telefono = $_POST['prop_telefono']; 
+       
                 $sql = "UPDATE propietario SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',prop_edad='$prop_edad',prop_direccion='$prop_direccion',prop_ecivil='$prop_ecivil',prop_correo='$prop_correo',prop_cedula='$prop_cedula',prop_telefono='$prop_telefono' WHERE prop_id ='$prop_id'";
                $update = mysqli_query($con,$sql);
                  

@@ -27,10 +27,10 @@ if( isset($_GET["id"]))
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_edad']?>" required="true" label="Edad :" style="width:50%" >
             </div>                
             <div  style="margin-bottom:5px">
-            <select name="prop_ecivil" class="easyui-combobox" name="dept"   value="true" label="Estado civil :"  style="width:200px;">
+            <select id="cc" name="prop_ecivil" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Estado civil :"  style="width:50%">
             
             
-        <option value="true" disabled="disabled" > <?php echo $row ['prop_ecivil']?></option>
+        <option   value="<?php echo $row ['prop_ecivil']?>" > <?php echo $row ['prop_ecivil']?></option>
 
         <option>Soltero</option>
         <option>Casado</option>
@@ -70,7 +70,16 @@ if( isset($_GET["id"]))
  
     <script type="text/javascript">
        
-       
+       $('#cc').combobox({
+           
+           
+           panelHeight:'150',
+           
+           onSelect: function(rec)
+           {
+            
+           }
+       });
       
         function saveUser(){              
            $('#frmequipo').form('submit',{

@@ -12,12 +12,13 @@ if( !isset($op) )
   exit;
 } 
 switch ($op) { 
+   
     case 'select':
         $condicion=' ';
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion." where usuario || contraseña like '%".$filtro."%' ";
+        $condicion=$condicion."where nombre || apellido like '%".$filtro."%'";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM login".$condicion );

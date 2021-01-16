@@ -108,7 +108,7 @@ catch (Exception $e){ //usar logs
 
  break;
  case 'selectcombo':
-    $resultqry = mysqli_query($con, 'SELECT * FROM propietario ' );
+    $resultqry = mysqli_query($con, 'SELECT * FROM propietario ORDER BY prop_nombre,prop_apellido;' );
     if (!$resultqry) {
     
     exit;
