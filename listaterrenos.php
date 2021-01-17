@@ -13,7 +13,8 @@
                 <th field="propi_longitud" width="25%">Longuitud</th>
                 <th field="propi_ciudad" width="25%">Ciudad</th>
                 <th field="propi_parroquia" width="25%">Parroquia</th>
-                <th field="tipodeasignacion" width="25%">Tipo de Asignación</th>
+                <th field="tipodeasignacion" width="25%" >Tipo de Asignación</th>
+             
                 <th field="fechadeasignacion" width="25%">Fecha de Asignación</th>
             </tr>
 
@@ -23,6 +24,7 @@
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editterreno()">editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
     
@@ -31,10 +33,10 @@
     <script type="text/javascript">
         var url;
         
-        function editUser(){
+        function editterreno(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editpropiedad&id='+row.propi_id;
+                window.location.href= 'main.php?pag=editterreno&id='+row.propi_id;
             }
         }
         function editpropi(){
@@ -54,7 +56,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/terrenos.php?op=delete',{propi_id:row.propi_id,propi_metros:row.propi_metros},function(result){
+            $.post('controlador/terrenos.php?op=delete',{propi_id:row.propi_id},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){
