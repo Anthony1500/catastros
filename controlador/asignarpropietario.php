@@ -56,7 +56,7 @@ switch ($op) {
                
                
 
-                echo $sql;
+                
                 $insert = mysqli_query($con,$sql); 
              
             if($insert){ 
@@ -108,7 +108,7 @@ catch (Exception $e){ //usar logs
 
  break;
  case 'selectcombo':
-    $resultqry = mysqli_query($con, 'SELECT * FROM propietario ORDER BY prop_nombre,prop_apellido;' );
+    $resultqry = mysqli_query($con, 'SELECT * from propietario' );
     if (!$resultqry) {
     
     exit;

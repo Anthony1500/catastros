@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion." where propiedad || contraseña like '%".$filtro."%' ";
+        $condicion=$condicion."where propi_sector like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM propiedad".$condicion );

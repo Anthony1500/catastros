@@ -16,6 +16,7 @@
     <link href="./main.css" rel="stylesheet">
     <link href="./icon.css" rel="stylesheet">
 </head>
+
 <?php
  session_start();
  if( isset(  $_SESSION['usuario']) ==false)
@@ -31,7 +32,7 @@
 		 <a style="color:blue";>Usuario:</a><font style="text-transform: uppercase;"><strong> <?php echo $_SESSION['usuario'] , "&nbsp;",$_SESSION['usuario1'];  ?> </strong></font> 
 
 
-			<a class="bot_personalizado" href="index.php"> Salir </a>
+			<a class="boton_personalizado" href="index.php"> Salir </a>
          </div> 
 
         </div>
@@ -54,7 +55,7 @@
                                 <li>
                                     <a  href="main.php?pag=listausuario">
                                         <i class="metismenu-icon icon"></i>
-                                        Ingreso credenciales
+                                        Ingreso Credenciales
                                     </a>
                                 </li>
                                 
@@ -92,13 +93,7 @@
                                         Reporte   
                                         </a>                                 
                                 </li>
-                                <li class="app-sidebar__heading">&nbsp;Mapa</li>
-                                <li>
-                                    <a  href="main.php?pag=mapa" >
-                                        <i class="metismenu-icon pe-7s-graph2"></i>
-                                        mapa
-                                    </a>
-                                </li>
+                                
                             </ul>
                         </div>
         </div>
@@ -115,6 +110,18 @@
 	
         </div>
  
-		<script type="text/javascript" src="./assets/scripts/main.js"></script>
+        <script type="text/javascript" src="./assets/scripts/main.js"></script>
+        <style type="text/css">
+  .boton_personalizado{
+    text-decoration: none;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+</style>
 </body>
 </html>

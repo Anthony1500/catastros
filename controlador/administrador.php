@@ -18,7 +18,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where nombre || apellido like '%".$filtro."%'";
+             $condicion=$condicion."where nombre like '%".$filtro."%' OR apellido like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM login".$condicion );

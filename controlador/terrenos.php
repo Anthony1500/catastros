@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion." where propiedad || contraseña like '%".$filtro."%' ";
+        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM terrenosvista".$condicion );
@@ -131,9 +131,9 @@ catch (Exception $e){ //usar logs
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['propi_id'])  ){ 
-                $propi_id = $_POST['propi_id']; 
-                $sql = " delete from propietario_propiedad where propi_id ='$propi_id'  "; 
+            if(!empty($_POST['propi_metros'])  ){ 
+                $propi_metros = $_POST['propi_metros']; 
+                $sql = " delete from terrenosvista where propi_metros ='$propi_metros'  "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 

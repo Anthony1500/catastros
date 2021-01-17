@@ -5,8 +5,8 @@
         <thead>
             <tr>               
                 <th field="prop_id" width="25%">Codigo</th>
-                <th field="prop_nombre" width="25%">Nombre</th>
-                <th field="prop_apellido" width="25%">Apellido</th>
+                <th field="prop_nombre" width="25%">Nombres</th>
+                <th field="prop_apellido" width="25%">Apellidos</th>
                 <th field="prop_edad" width="25%">Edad</th>
                 <th field="prop_direccion" width="25%">Direccion</th>
                 <th field="prop_ecivil" width="25%">Estado Civil</th>

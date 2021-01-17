@@ -4,8 +4,8 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="prop_nombre" width="25%">Nombre</th>
-                <th field="prop_apellido" width="25%">Apellido </th>
+                <th field="prop_nombre" width="25%">Nombres</th>
+                <th field="prop_apellido" width="25%">Apellidos </th>
                 <th field="prop_cedula" width="25%">Cédula</th>
                 <th field="propi_id" width="25%">ID Propiedad</th>
                 <th field="propi_metros" width="25%">Metros</th>
@@ -54,7 +54,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/terrenos.php?op=delete',{propi_id:row.propi_id},function(result){
+            $.post('controlador/terrenos.php?op=delete',{propi_id:row.propi_id,propi_metros:row.propi_metros},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){

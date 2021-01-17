@@ -20,14 +20,27 @@ if( isset($_GET["id"]))
             </div>
            
             <div  style="margin-bottom:5px">
-            <select id="prop_id"  name ="prop_id"labelPosition="top"required="true" class="easyui-combobox" 
+            
+            <select  name ="prop_id"labelPosition="top"required="true" class="easyui-combogrid" 
             style="width:50%;"  data-options="
                     url:'controlador/asignarpropietario.php?op=selectcombo',
                     method:'get',
-                    valueField:'prop_id',
+                    
+                    idField:'prop_id',
                     textField:'prop_nombre',
                     panelHeight:'auto',
+                   
                     label: 'Nombre Propietario:',
+                    columns: [[
+                        {field:'prop_id',title:'Codigo',width:80},
+                        {field:'prop_nombre',title:'Nombre',width:120},
+                        {field:'prop_apellido',title:'Apellido',width:80,align:'right'},
+                        {field:'prop_cedula',title:'Cedula',width:80,align:'right'},
+                        {field:'prop_correo',title:'Correo',width:200},
+                                          
+                        
+                    ]],
+                    fitColumns:true,
                     labelWidth:'160px'
                     ">               
             </select>

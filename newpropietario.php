@@ -3,10 +3,10 @@
            
 
 <div style="margin-bottom:5px">
-                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombre Completo :" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" required="true" label="Nombres Completos :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="Apellido Completo :" style="width:50%" >
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox" required="true" label="Apellidos Completos :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox" required="true" label="Edad :" style="width:50%" >
@@ -17,9 +17,9 @@
             
         
             <div style="margin-bottom:5px">
-                <select id="cc"label="Estado civil :" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="prop_ecivil">
-                <option  disabled="disabled"selected="selected" ></option>
-                <option >Soltero</option>
+                <select id="cc"label="Estado Civil :" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="prop_ecivil">
+                <option  selected="selected" >- Seleccionar -</option>
+                <option>Soltero</option>
                 <option>Casado</option>
                 <option>Viudo</option>
                 <option>Divorciado</option>

@@ -17,16 +17,16 @@ if( isset($_GET["id"]))
                 <input name="cod_log" readonly=»readonly»  value="<?php echo $row['cod_log'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:80%">
             </div>
             <div style="margin-bottom:5px">
-                <input name="nombre" value="<?php echo $row['nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombre Completo:" style="width:50%" >
+                <input name="nombre" value="<?php echo $row['nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombres Completos:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="apellido" value="<?php echo $row['apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="apellido Completo:" style="width:50%" >
+                <input name="apellido" value="<?php echo $row['apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="Apellidos Completos:" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="usuario" value="<?php echo $row['usuario'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="usuario" style="width:50%" >
+                <input name="usuario" value="<?php echo $row['usuario'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="Usuario" style="width:50%" >
             </div>              
             <div style="margin-bottom:5px">
-                <input  name="contraseña" value="<?php echo $row['contraseña'] ?>"  labelPosition="top" class="easyui-passwordbox" required="true" label="contraseña:" style="width:50%" >
+                <input  name="contraseña" value="<?php echo $row['contraseña'] ?>"  labelPosition="top" class="easyui-passwordbox" required="true" label="Contraseña:" style="width:50%" >
             </div> 
 
          

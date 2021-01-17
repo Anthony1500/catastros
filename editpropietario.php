@@ -18,16 +18,16 @@ if( isset($_GET["id"]))
                 <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
-                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_nombre']?>"  required="true" label="Nombre Completo  :" style="width:50%" >
+                <input name="prop_nombre" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['prop_nombre']?>"  required="true" label="Nombres Completos  :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_apellido']?>" required="true" label="Apellido Completo :" style="width:50%" >
+                <input name="prop_apellido" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_apellido']?>" required="true" label="Apellidos Completos :" style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="prop_edad" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['prop_edad']?>" required="true" label="Edad :" style="width:50%" >
             </div>                
             <div  style="margin-bottom:5px">
-            <select id="cc" name="prop_ecivil" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Estado civil :"  style="width:50%">
+            <select id="cc" name="prop_ecivil" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Estado Civil :"  style="width:50%">
             
             
         <option   value="<?php echo $row ['prop_ecivil']?>" > <?php echo $row ['prop_ecivil']?></option>

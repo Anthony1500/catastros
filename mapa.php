@@ -1,4 +1,15 @@
+<?php
+require ('controlador/coneccion.php'); 
+if( isset($_GET["id"]))
+{ 
+    $id=$_GET["id"];
+    $sql = "SELECT * FROM propiedad where propi_id='$id'";
+    $result = mysqli_query($con,$sql);
+     
+    $row = mysqli_fetch_assoc($result) ;
+}
 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -11,12 +22,14 @@
      <div class="row">       
         <div class="col-sm-4">  
            <div class="form-group">
-              <input type='text' id='busqueda'name='busqueda' class="form-control" placeholder='Pon la latitud y longitud  aquí' />
-              
+              <input type='text' id='busqueda'name='busqueda' value="<?php echo $row ['propi_latitud'].",".  $row ['propi_longitud']?>" class="form-control" placeholder='Pon la latitud y longitud  aquí ejemplo: -1.708915, -79.040429' />
+             
            </div>
+           
         </div>
         <div class="form-group">
            <input onclick="init()" value='Localizar' class="btn btn-success" />
+           <a  href="main.php?pag=listapropiedad" class="btn btn-secondary" >Regresar</a>
         </div>
      </div>
  </form> 

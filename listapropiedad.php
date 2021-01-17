@@ -26,6 +26,7 @@
         <a  href="main.php?pag=newpropiedad" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
         <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" iconCls="icon-add" plain="true"  >Agregar propietario</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
+        <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true"  onclick="mapa()">Busqueda en el Mapa</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
@@ -39,6 +40,12 @@
             var row = $('#dg').datagrid('getSelected');
             if (row){
                 window.location.href= 'main.php?pag=editpropiedad&id='+row.propi_id;
+            }
+        }
+        function mapa(){
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                window.location.href= 'main.php?pag=mapa&id='+row.propi_id;
             }
         }
         function editpropi(){
