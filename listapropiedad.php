@@ -6,7 +6,7 @@
             <tr>               
                 <th field="propi_id" width="25%">Codigo Propiedad</th>
                 
-                <th field="propi_metros" width="25%">Metros </th>
+                <th field="propi_metros" width="25%">Metros m²</th>
                 <th field="propi_longitud" width="25%">Longitud</th>
                 <th field="propi_latitud" width="25%">Latitud</th>
                 <th field="propi_sector" width="25%">Sector</th>

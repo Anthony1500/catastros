@@ -136,9 +136,9 @@ catch (Exception $e){ //usar logs
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['propi_metros'])  ){ 
-                $propi_metros = $_POST['propi_metros']; 
-                $sql = " delete from terrenosvista where propi_metros ='$propi_metros'  "; 
+            if(!empty($_POST['propi_id'])  ){ 
+                $propi_id = $_POST['propi_id']; 
+                $sql = " delete from propietario_propiedad where propi_id ='$propi_id'  "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 
