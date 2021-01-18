@@ -84,7 +84,7 @@ catch (Exception $e){ //usar logs
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['propi_id'])&&!empty($_POST['prop_nombre'])&&!empty($_POST['prop_apellido'])&&!empty($_POST['tipodeasignacion'])){ 
+    if(!empty($_POST['tipodeasignacion'])){ 
         $propi_id = $_POST['propi_id'];  
         $prop_nombre = $_POST['prop_nombre'];   
         $prop_apellido = $_POST['prop_apellido'];
@@ -99,7 +99,7 @@ catch (Exception $e){ //usar logs
         $fechadeasignacion = $_POST['fechadeasignacion'];   
            
         
-                $sql = "UPDATE terrenosvista SET  prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',tipodeasignacion='$tipodeasignacion' WHERE propi_id ='$propi_id'";
+                $sql = "UPDATE propietario_propiedad SET  tipodeasignacion='$tipodeasignacion' WHERE propi_id ='$propi_id'";
                $update = mysqli_query($con,$sql);
 
      

@@ -14,7 +14,7 @@ if( isset($_GET["id"]))
            
 
             <div style="margin-bottom:5px">
-                <input name="propi_id" readonly=»readonly»  value="<?php echo $row['propi_id'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Login:" style="width:50%">
+                <input name="propi_id" readonly=»readonly»  value="<?php echo $row['propi_id'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Codigo:" style="width:50%">
             </div>
             <div style="margin-bottom:5px">
                 <input name="prop_nombre"  readonly=»readonly» value="<?php echo $row['prop_nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombres Completos:" style="width:50%" >
