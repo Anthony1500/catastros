@@ -3,7 +3,7 @@ require ('controlador/coneccion.php');
 if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
-    $sql = "SELECT * FROM terrenosvista where propi_id='$id'";
+    $sql = "SELECT * FROM terrenosvista where propro_codigo='$id'";
     $result = mysqli_query($con,$sql);
      
     $row = mysqli_fetch_assoc($result) ;
@@ -14,7 +14,7 @@ if( isset($_GET["id"]))
            
 
             <div style="margin-bottom:5px">
-                <input name="propi_id" readonly=»readonly»  value="<?php echo $row['propi_id'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Codigo:" style="width:50%">
+                <input name="propro_codigo" readonly=»readonly»  value="<?php echo $row['propro_codigo'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Codigo:" style="width:50%">
             </div>
             <div style="margin-bottom:5px">
                 <input name="prop_nombre"  readonly=»readonly» value="<?php echo $row['prop_nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombres Completos:" style="width:50%" >

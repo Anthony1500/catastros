@@ -85,7 +85,7 @@ catch (Exception $e){ //usar logs
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
     if(!empty($_POST['tipodeasignacion'])){ 
-        $propi_id = $_POST['propi_id'];  
+        $propro_codigo = $_POST['propro_codigo'];  
         $prop_nombre = $_POST['prop_nombre'];   
         $prop_apellido = $_POST['prop_apellido'];
         $prop_cedula = $_POST['prop_cedula'];
@@ -99,7 +99,7 @@ catch (Exception $e){ //usar logs
         $fechadeasignacion = $_POST['fechadeasignacion'];   
            
         
-                $sql = "UPDATE propietario_propiedad SET  tipodeasignacion='$tipodeasignacion' WHERE propi_id ='$propi_id'";
+                $sql = "UPDATE propietario_propiedad SET  tipodeasignacion='$tipodeasignacion' WHERE propro_codigo ='$propro_codigo'";
                $update = mysqli_query($con,$sql);
 
      
@@ -136,9 +136,9 @@ catch (Exception $e){ //usar logs
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['propi_id'])  ){ 
-                $propi_id = $_POST['propi_id']; 
-                $sql = " delete from propietario_propiedad where propi_id ='$propi_id'  "; 
+            if(!empty($_POST['propro_codigo'])  ){ 
+                $propro_codigo = $_POST['propro_codigo']; 
+                $sql = " delete from propietario_propiedad where propro_codigo ='$propro_codigo'  "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 

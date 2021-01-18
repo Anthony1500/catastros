@@ -3,7 +3,8 @@
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
-            <tr>               
+            <tr>
+                <th field="propro_codigo" width="25%">ID </th>               
                 <th field="prop_nombre" width="25%">Nombres</th>
                 <th field="prop_apellido" width="25%">Apellidos </th>
                 <th field="prop_cedula" width="25%">Cédula</th>
@@ -36,7 +37,7 @@
         function editterreno(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editterreno&id='+row.propi_id;
+                window.location.href= 'main.php?pag=editterreno&id='+row.propro_codigo;
             }
         }
         function editpropi(){
@@ -56,7 +57,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/terrenos.php?op=delete',{propi_id:row.propi_id},function(result){
+            $.post('controlador/terrenos.php?op=delete',{propro_codigo:row.propro_codigo},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){
