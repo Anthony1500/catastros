@@ -1,22 +1,16 @@
-<table id="dg" title="Lista de Terrenos" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
-            url="controlador/terrenos.php?op=select"
+<table id="dg" title="Lista de Riegos" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
+            url="controlador/riego.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="propro_codigo" width="25%">ID terrenos </th>               
-                <th field="prop_nombre" width="25%">Nombres</th>
-                <th field="prop_apellido" width="25%">Apellidos </th>
-                <th field="prop_cedula" width="25%">Cédula</th>
-                <th field="propi_id" width="25%">ID Propiedad</th>
-                <th field="propi_metros" width="25%">Metros</th>
-                <th field="propi_latitud" width="25%">Latitud</th>
-                <th field="propi_longitud" width="25%">Longuitud</th>
-                <th field="propi_ciudad" width="25%">Ciudad</th>
-                <th field="propi_parroquia" width="25%">Parroquia</th>
-                <th field="tipodeasignacion" width="25%" >Tipo de Asignación</th>
-             
-                <th field="fechadeasignacion" width="25%">Fecha de Asignación</th>
+                <th field="riego_id" width="25%">ID </th>               
+                <th field="propi_id" width="25%">ID propietario</th>
+                <th field="riego_dias" width="25%">Dias </th>
+                <th field="riego_horas" width="25%">Horas</th>
+                <th field="riego_fecha" width="25%">Fecha</th>
+                <th field="riego_observaciones" width="25%">Observaciones</th>
+               
             </tr>
 
         </thead>
@@ -24,9 +18,9 @@
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
-        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editriego()" iconCls="icon-add" plain="true"  >Agregar riego</a>
+        
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editterreno()">editar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editriego()">editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
     
@@ -50,7 +44,7 @@
         function editriego(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editriego&id='+row.propi_id;
+                window.location.href= 'main.php?pag=editriegos&id='+row.riego_id;
             }
         }
 
@@ -63,7 +57,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/terrenos.php?op=delete',{propro_codigo:row.propro_codigo},function(result){
+            $.post('controlador/riego.php?op=delete',{riego_id:row.riego_id},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){

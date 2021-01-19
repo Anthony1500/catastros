@@ -42,6 +42,7 @@
                 window.location.href= 'main.php?pag=editpropiedad&id='+row.propi_id;
             }
         }
+        
         function mapa(){
             var row = $('#dg').datagrid('getSelected');
             if (row){

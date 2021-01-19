@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
+        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR prop_cedula like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM terrenosvista".$condicion );

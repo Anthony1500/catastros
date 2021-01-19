@@ -19,10 +19,10 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where propi_metros like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
+        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM propiedad".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * FROM riego".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -44,18 +44,15 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                //$propi_id = $_POST['propi_id'];   
-                $propi_metros = $_POST['propi_metros']; 
-                $propi_longitud = $_POST['propi_longitud'];   
-                $propi_latitud = $_POST['propi_latitud']; 
-                $propi_sector = $_POST['propi_sector'];  
-                $propi_calleprincipal = $_POST['propi_calleprincipal']; 
-                $propi_callesecundaria = $_POST['propi_callesecundaria'];   
-                $propi_ciudad = $_POST['propi_ciudad']; 
-                $propi_parroquia = $_POST['propi_parroquia']; 
+                $propi_id = $_POST['propi_id'];   
+                $riego_dias = $_POST['riego_dias']; 
+                $riego_horas= $_POST['riego_horas'];   
+                $riego_fecha = $_POST['riego_fecha']; 
+                $riego_observaciones = $_POST['riego_observaciones'];  
+                 
                 
-                $sql = "INSERT INTO propiedad (propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia) 
-                VALUES ('$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia')"; 
+                $sql = "INSERT INTO riego (propi_id,riego_dias,riego_horas,riego_fecha,riego_observaciones) 
+                VALUES ('$propi_id','$riego_dias','$riego_horas','$riego_fecha','$riego_observaciones')"; 
                
                
 
@@ -84,17 +81,16 @@ catch (Exception $e){ //usar logs
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['propi_id'])&&!empty($_POST['propi_metros']) && !empty($_POST['propi_longitud'])&& !empty($_POST['propi_latitud'])&&!empty($_POST['propi_sector'])&& !empty($_POST['propi_calleprincipal'])&& !empty($_POST['propi_callesecundaria'])&& !empty($_POST['propi_ciudad'])&&!empty($_POST['propi_parroquia'])){ 
-        $propi_id = $_POST['propi_id'];   
-        $propi_metros = $_POST['propi_metros']; 
-        $propi_longitud = $_POST['propi_longitud'];   
-        $propi_latitud = $_POST['propi_latitud']; 
-        $propi_sector = $_POST['propi_sector'];  
-        $propi_calleprincipal = $_POST['propi_calleprincipal']; 
-        $propi_callesecundaria = $_POST['propi_callesecundaria'];   
-        $propi_ciudad = $_POST['propi_ciudad']; 
-        $propi_parroquia = $_POST['propi_parroquia'];  
-                $sql = "UPDATE propiedad SET  propi_id='$propi_id',propi_metros='$propi_metros',propi_longitud='$propi_longitud',propi_latitud='$propi_latitud',propi_sector='$propi_sector',propi_calleprincipal='$propi_calleprincipal',propi_callesecundaria='$propi_callesecundaria',propi_ciudad='$propi_ciudad',propi_parroquia='$propi_parroquia' WHERE propi_id ='$propi_id'";
+    if(!empty($_POST['riego_dias'])&&!empty($_POST['riego_horas'])&&!empty($_POST['riego_fecha'])&&!empty($_POST['riego_observaciones'])){ 
+                $riego_id = $_POST['riego_id'];
+                $propi_id = $_POST['propi_id'];   
+                $riego_dias = $_POST['riego_dias']; 
+                $riego_horas= $_POST['riego_horas'];   
+                $riego_fecha = $_POST['riego_fecha']; 
+                $riego_observaciones = $_POST['riego_observaciones'];   
+           
+        
+                $sql = "UPDATE riego SET  propi_id='$propi_id',riego_dias='$riego_dias',riego_horas='$riego_horas',riego_fecha='$riego_fecha',riego_observaciones='$riego_observaciones' WHERE riego_id ='$riego_id'";
                $update = mysqli_query($con,$sql);
 
      
@@ -131,10 +127,9 @@ catch (Exception $e){ //usar logs
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['propi_id'])   ){ 
-                $propi_id = $_POST['propi_id']; 
-              
-                $sql = " delete from propiedad where propi_id ='$propi_id' "; 
+            if(!empty($_POST['riego_id'])  ){ 
+                $riego_id = $_POST['riego_id']; 
+                $sql = " delete from riego where riego_id ='$riego_id'  "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 
