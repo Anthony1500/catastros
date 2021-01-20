@@ -41,7 +41,7 @@ if( isset($_GET["id"]))
                 <input name="riego_horas" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['riego_horas']?>"  required="true" label="Horas " style="width:30%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="riego_fecha" labelPosition="top"class="easyui-datebox" value="<?php echo $row ['riego_fecha']?>"data-options="formatter:myformatter,parser:myparser"   label="Fecha de asignacion:"  required="true"  style="width:30%" >
+                <input name="riego_fecha" labelPosition="top"class="easyui-datebox" value="<?php echo $row ['riego_fecha']?>"data-options="formatter:myformatter,parser:myparser"   label="Fecha de Asignacion:"  required="true"  style="width:30%" >
             </div>              
             
             <div style="margin-bottom:5px">
