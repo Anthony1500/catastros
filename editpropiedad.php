@@ -30,7 +30,9 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="propi_sector" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_sector']?>"  required="true" label="Sector " style="width:50%" >
             </div> 
-                      
+            <div style="margin-bottom:5px">
+                <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_parroquia']?>"  required="true" label="Parroquia " style="width:50%" >
+            </div>               
             <div style="margin-bottom:5px">
                 <input name="propi_calleprincipal" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_calleprincipal']?>" required="true" label="Calle principal " style="width:50%" >
             </div>
@@ -40,9 +42,7 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="propi_ciudad" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_ciudad']?>"  required="true" label="Ciudad " style="width:50%" >
             </div> 
-            <div style="margin-bottom:5px">
-                <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_parroquia']?>"  required="true" label="Parroquia " style="width:50%" >
-            </div>                    
+                      
         </form>  
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
