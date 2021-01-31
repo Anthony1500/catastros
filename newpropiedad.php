@@ -3,7 +3,9 @@
            
 
 
-
+               <div style="margin-bottom:5px">
+                <input name="propi_id" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad Id " style="width:50%" >
+            </div> 
             <div style="margin-bottom:5px">
                 <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad metros " style="width:50%" >
             </div> 
@@ -31,7 +33,22 @@
             <div style="margin-bottom:5px">
                 <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" required="true" label="Parroquia " style="width:50%" >
             </div> 
-           
+            <div style="margin-bottom:5px">
+                <select id="cc"label="Comunidades :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="propi_comunidad">
+                <option value="none" selected disabled hidden> 
+                Seleccione la comunidad 
+      </option> 
+                <option>Toallo Misquillí</option>
+                <option>Quinche</option>
+                <option>San Pablo</option>
+                <option>Angaguana Alto</option>
+                <option>Angaguana Bajo</option>
+                <option>Cuatro esquinas</option>
+            
+                
+                
+                
+            </select>
       </form>
    
         <div style="text-align:center;padding:5px 0">

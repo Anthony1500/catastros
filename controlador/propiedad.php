@@ -44,7 +44,7 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                //$propi_id = $_POST['propi_id'];   
+                $propi_id = $_POST['propi_id'];   
                 $propi_metros = $_POST['propi_metros']; 
                 $propi_longitud = $_POST['propi_longitud'];   
                 $propi_latitud = $_POST['propi_latitud']; 
@@ -53,9 +53,10 @@ switch ($op) {
                 $propi_callesecundaria = $_POST['propi_callesecundaria'];   
                 $propi_ciudad = $_POST['propi_ciudad']; 
                 $propi_parroquia = $_POST['propi_parroquia']; 
+                $propi_comunidad = $_POST['propi_comunidad']; 
                 
-                $sql = "INSERT INTO propiedad (propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia) 
-                VALUES ('$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia')"; 
+                $sql = "INSERT INTO propiedad (propi_id,propi_metros, propi_longitud, propi_latitud, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia,propi_comunidad) 
+                VALUES ('$propi_id','$propi_metros','$propi_longitud','$propi_latitud','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia','$propi_comunidad')"; 
                
                
 
@@ -84,7 +85,7 @@ catch (Exception $e){ //usar logs
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['propi_id'])&&!empty($_POST['propi_metros']) && !empty($_POST['propi_longitud'])&& !empty($_POST['propi_latitud'])&&!empty($_POST['propi_sector'])&& !empty($_POST['propi_calleprincipal'])&& !empty($_POST['propi_callesecundaria'])&& !empty($_POST['propi_ciudad'])&&!empty($_POST['propi_parroquia'])){ 
+    if(!empty($_POST['propi_id'])&&!empty($_POST['propi_metros']) && !empty($_POST['propi_longitud'])&& !empty($_POST['propi_latitud'])&&!empty($_POST['propi_sector'])&& !empty($_POST['propi_calleprincipal'])&& !empty($_POST['propi_callesecundaria'])&& !empty($_POST['propi_ciudad'])&&!empty($_POST['propi_parroquia'])&&!empty($_POST['propi_comunidad'])){ 
         $propi_id = $_POST['propi_id'];   
         $propi_metros = $_POST['propi_metros']; 
         $propi_longitud = $_POST['propi_longitud'];   
@@ -93,8 +94,9 @@ catch (Exception $e){ //usar logs
         $propi_calleprincipal = $_POST['propi_calleprincipal']; 
         $propi_callesecundaria = $_POST['propi_callesecundaria'];   
         $propi_ciudad = $_POST['propi_ciudad']; 
-        $propi_parroquia = $_POST['propi_parroquia'];  
-                $sql = "UPDATE propiedad SET  propi_id='$propi_id',propi_metros='$propi_metros',propi_longitud='$propi_longitud',propi_latitud='$propi_latitud',propi_sector='$propi_sector',propi_calleprincipal='$propi_calleprincipal',propi_callesecundaria='$propi_callesecundaria',propi_ciudad='$propi_ciudad',propi_parroquia='$propi_parroquia' WHERE propi_id ='$propi_id'";
+        $propi_parroquia = $_POST['propi_parroquia'];
+        $propi_comunidad = $_POST['propi_comunidad'];   
+                $sql = "UPDATE propiedad SET  propi_id='$propi_id',propi_metros='$propi_metros',propi_longitud='$propi_longitud',propi_latitud='$propi_latitud',propi_sector='$propi_sector',propi_calleprincipal='$propi_calleprincipal',propi_callesecundaria='$propi_callesecundaria',propi_ciudad='$propi_ciudad',propi_parroquia='$propi_parroquia',propi_comunidad='$propi_comunidad' WHERE propi_id ='$propi_id'";
                $update = mysqli_query($con,$sql);
 
      

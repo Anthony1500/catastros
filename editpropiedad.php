@@ -15,7 +15,7 @@ if( isset($_GET["id"]))
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:50%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly»  value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
                 <input name="propi_metros" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_metros']?>"  required="true" label="Metros " style="width:50%" >
@@ -42,7 +42,20 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="propi_ciudad" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_ciudad']?>"  required="true" label="Ciudad " style="width:50%" >
             </div> 
-                      
+            <div style="margin-bottom:5px">
+                <select id="cc"label="Comunidades :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="propi_comunidad">
+                <option   value="<?php echo $row ['propi_comunidad']?>" > <?php echo $row ['propi_comunidad']?></option>
+               
+      
+                <option>Toallo Misquillí</option>
+                <option>Quinche</option>
+                <option>San Pablo</option>
+                <option>Angaguana Alto</option>
+                <option>Angaguana Bajo</option>
+                <option>Cuatro esquinas</option>
+                </select>
+         
+         </div>       
         </form>  
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>

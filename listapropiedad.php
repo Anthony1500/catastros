@@ -9,11 +9,13 @@
                 <th field="propi_metros" width="25%">Metros m²</th>
                 <th field="propi_longitud" width="25%">Longitud</th>
                 <th field="propi_latitud" width="25%">Latitud</th>
+                <th field="propi_ciudad" width="25%">Ciudad</th>
                 <th field="propi_parroquia" width="25%">Parroquia</th>
+                <th field="propi_comunidad" width="25%">Comunidad</th>
                 <th field="propi_sector" width="25%">Sector</th>
                 <th field="propi_calleprincipal" width="25%">Calle Principal</th>
                 <th field="propi_callesecundaria" width="25%">Calle Secundaria</th>
-                <th field="propi_ciudad" width="25%">Ciudad</th>
+               
                 
                 
                
@@ -67,7 +69,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/propiedad.php?op=delete',{prop_id:row.prop_id},function(result){
+            $.post('controlador/propiedad.php?op=delete',{propi_id:row.propi_id},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){
