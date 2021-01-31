@@ -18,8 +18,8 @@
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a  href="main.php?pag=newcobro" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editriego()">Editar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
     
@@ -43,7 +43,7 @@
         function editriego(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=editriegos&id='+row.co_id;
+                window.location.href= 'main.php?pag=editcobro&id='+row.co_id;
             }
         }
 
@@ -56,7 +56,7 @@ if (row){
         if (r){
             $.messager.progress({title:'Por favor espere',msg:'Cargando datos...' });
 
-            $.post('controlador/riego.php?op=delete',{co_id:row.co_id},function(result){
+            $.post('controlador/cobro.php?op=delete',{co_id:row.co_id},function(result){
                 $.messager.progress('close');     
                 
                 if (result.success){

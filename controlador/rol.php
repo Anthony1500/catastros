@@ -27,7 +27,18 @@ switch ($op) {
             echo json_encode($items);
             break; 
             
-
+            case 'select-cobro':
+                $resultqry = pg_query($dbconn, 'SELECT * FROM propiedad');
+                if (!$resultqry) {
+                echo json_encode("Ocurrió un error en la consulta");
+                exit;
+                }        
+                $items = array();           
+                while($row = pg_fetch_object($resultqry)) {
+                   array_push($items, $row);
+                }        
+                echo json_encode($items);
+                break; 
  
     default:
             echo json_encode( "Error no existe la opcion ".$op);

@@ -45,14 +45,13 @@ switch ($op) {
             );          
             try{
                 $propi_id = $_POST['propi_id'];   
-                $riego_dias = $_POST['riego_dias']; 
-                $riego_horas= $_POST['riego_horas'];   
-                $riego_fecha = $_POST['riego_fecha']; 
-                $riego_observaciones = $_POST['riego_observaciones'];  
-                 
+                $co_fecha = $_POST['co_fecha']; 
+                $co_valortotal= $_POST['co_valortotal'];   
+                $estado = $_POST['estado']; 
+            
                 
-                $sql = "INSERT INTO riego (propi_id,riego_dias,riego_horas,riego_fecha,riego_observaciones) 
-                VALUES ('$propi_id','$riego_dias','$riego_horas','$riego_fecha','$riego_observaciones')"; 
+                $sql = "INSERT INTO cobro (propi_id,co_fecha,co_valortotal,estado) 
+                VALUES ('$propi_id','$co_fecha','$co_valortotal','$estado')"; 
                
                
 
@@ -61,7 +60,7 @@ switch ($op) {
              
             if($insert){ 
                 $response['status'] = 1; 
-                $response['msg'] = '¡Las propiedades se han agregado con éxito!'; 
+                $response['msg'] = '¡El cobro se han agregado con éxito!'; 
             } 
 }
 
@@ -69,51 +68,36 @@ switch ($op) {
 catch (Exception $e){ //usar logs
     $response = array( 
         'status' => 0, 
-        'msg' =>  'La propiedad ya existe'  
+        'msg' =>  'La cobro ya existe'  
     );           
 }
             
             echo json_encode($response); 
  break; 
 
- case 'selectcombo':
-    $resultqry = pg_query($dbconn, 'SELECT * FROM propiedad ' );
-    if (!$resultqry) {
-    echo json_enconde("Ocurrió un error en la consulta");
-    exit;
-    }
-    
-    $items=array();
- 
-    while($row = pg_fetch_object($resultqry)) {
-       array_push($items, $row);
-    }
-  
-    echo json_encode($items);
-    break;
- 
+
  case 'update':
     $response = array( 
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['riego_dias'])&&!empty($_POST['riego_horas'])&&!empty($_POST['riego_fecha'])&&!empty($_POST['riego_observaciones'])){ 
-                $riego_id = $_POST['riego_id'];
+    if(!empty($_POST['co_fecha'])&&!empty($_POST['co_valortotal'])&&!empty($_POST['estado'])){ 
+                $co_id = $_POST['co_id'];
                 $propi_id = $_POST['propi_id'];   
-                $riego_dias = $_POST['riego_dias']; 
-                $riego_horas= $_POST['riego_horas'];   
-                $riego_fecha = $_POST['riego_fecha']; 
-                $riego_observaciones = $_POST['riego_observaciones'];   
+                $co_fecha = $_POST['co_fecha']; 
+                $co_valortotal= $_POST['co_valortotal'];   
+                $estado = $_POST['estado']; 
+         
            
         
-                $sql = "UPDATE riego SET  propi_id='$propi_id',riego_dias='$riego_dias',riego_horas='$riego_horas',riego_fecha='$riego_fecha',riego_observaciones='$riego_observaciones' WHERE riego_id ='$riego_id'";
+                $sql = "UPDATE cobro SET  propi_id='$propi_id',co_fecha='$co_fecha',co_valortotal='$co_valortotal',estado='$estado' WHERE co_id ='$co_id'";
                $update = mysqli_query($con,$sql);
 
      
 
                 if($update){ 
                     $response['status'] = 1; 
-                    $response['msg'] = '¡Los datos del usuario se han actualizado con éxito!'; 
+                    $response['msg'] = '¡Los datos del cobro se han actualizado con éxito!'; 
                 } 
             }else{ 
                 $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
@@ -122,32 +106,21 @@ catch (Exception $e){ //usar logs
             echo json_encode($response); 
 
  break;
- case 'select-cobro':
-    $resultqry = pg_query($dbconn, 'SELECT * FROM propiedad');
-    if (!$resultqry) {
-    echo json_encode("Ocurrió un error en la consulta");
-    exit;
-    }        
-    $items = array();           
-    while($row = pg_fetch_object($resultqry)) {
-       array_push($items, $row);
-    }        
-    echo json_encode($items);
-    break; 
+
   
  case 'delete':
         $response = array( 
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
-            if(!empty($_POST['riego_id'])  ){ 
-                $riego_id = $_POST['riego_id']; 
-                $sql = " delete from riego where riego_id ='$riego_id'  "; 
+            if(!empty($_POST['co_id'])  ){ 
+                $co_id = $_POST['co_id']; 
+                $sql = " delete from cobro where co_id ='$co_id'  "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 
                     $response['status'] = 1; 
-                    $response['msg'] = '¡Los datos del usuario se han eliminado con éxito!'; 
+                    $response['msg'] = '¡Los datos del cobro se han eliminado con éxito!'; 
                 } 
             }else{ 
                 $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
