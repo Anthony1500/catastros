@@ -84,11 +84,7 @@
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Cobro
                                     </a>
-                                    <a href="main.php?pag=listausuarioactual">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
-                                        Usuarios
-                                    </a>
-                                    <a href="main.php?pag=listausuarioactual">
+                                     <a href="main.php?pag=visual">
                                         <i class="metismenu-icon pe-7s-display2"></i>
                                         Reporte   
                                         </a>                                 
