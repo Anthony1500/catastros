@@ -20,19 +20,19 @@
  <td ><a  href="reporte.php" class="btn btn-success"  ><img icon="68" src="./imagenes/excel.png"  /></a></td>
  </tr>
  <tr>
- <td style = "text-transform:uppercase;"><p class="thick">Reporte Propiedad</p></td>
+ <td style = "text-transform:uppercase;"><p class="thick">Reporte Propiedad con los Terrenos Asignados</p></td>
  
  <td ><a  href="reporte1.php" class="btn btn-success" ><img icon="68" src="./imagenes/excel.png"  /></a></td>
  </tr>
  <tr>
- <td style = "text-transform:uppercase;"><p class="thick">Reporte Riego</p></td>
+ <td style = "text-transform:uppercase;"><p class="thick">Reporte  Riego que fueron asignados en terrenos</p></td>
  
- <td ><a  href="main.php?pag=reporte" class="btn btn-success" ><img icon="68" src="./imagenes/excel.png"  /></a></td>
+ <td ><a  href="reporte2.php" class="btn btn-success" ><img icon="68" src="./imagenes/excel.png"  /></a></td>
  </tr>
  <tr>
- <td style = "text-transform:uppercase;"><p class="thick">Reporte Riego</p></td>
+ <td style = "text-transform:uppercase;"><p class="thick">Reporte Cobro</p></td>
  
- <td><a  href="main.php?pag=reporte" class="btn btn-success" ><img icon="68" src="./imagenes/excel.png"  /></a></td>
+ <td><a  href="reporte3.php" class="btn btn-success" ><img icon="68" src="./imagenes/excel.png"  /></a></td>
  </tr>
  </tbody>
  </table>

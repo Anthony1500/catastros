@@ -7,7 +7,7 @@ noCli();
 require_once 'Classes/PHPExcel.php';
 require ('controlador/coneccion.php');
 require_once 'controlador/mostrar.php';
-$sql = "SELECT * FROM propietario";
+$sql = "SELECT * FROM cobro";
 	$resultado = mysqli_query($con,$sql);
 $fila = 7; //Establecemos en que fila inciara a imprimir los datos
 $gdImage = imagecreatefrompng('imagenes/logoecuador.png');
@@ -39,7 +39,7 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 	$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
 	$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
 	$objDrawing->setHeight(100);
-	$objDrawing->setCoordinates('I1');
+	$objDrawing->setCoordinates('E1');
 	$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 	$estiloTituloReporte = array(
 		'font' => array(
@@ -109,48 +109,36 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		)
 		));
 		
-		$objPHPExcel->getActiveSheet()->getStyle('A1:I5')->applyFromArray($estiloTituloReporte);
-		$objPHPExcel->getActiveSheet()->getStyle('A6:I6')->applyFromArray($estiloTituloColumnas);
+		$objPHPExcel->getActiveSheet()->getStyle('A1:E5')->applyFromArray($estiloTituloReporte);
+		$objPHPExcel->getActiveSheet()->getStyle('A6:E6')->applyFromArray($estiloTituloColumnas);
 		
-		$objPHPExcel->getActiveSheet()->setCellValue('D3', 'REPORTE DE LOS PROPIETARIOS');
-		$objPHPExcel->getActiveSheet()->mergeCells('D3:F3');
+		$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE COBRO');
+		$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO');
+		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO       ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'NOMBRE');
+		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIEDAD      ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'APELLIDO');
+		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'FECHA     ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('D6', 'EDAD');
+		$objPHPExcel->getActiveSheet()->setCellValue('D6', 'VALOR TOTAL    ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('E6', 'DIRECCION');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('F6', 'ESTADO CIVIL');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('G6', 'CORREO');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('H6', 'CEDULA');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('I6', 'TELEFONO');
-
+		$objPHPExcel->getActiveSheet()->setCellValue('E6', 'ESTADO      ');
+		
 
 $i = 2;
 while($rows = $resultado->fetch_assoc())
 {
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue('A'.$fila, $rows['prop_id'])
-->setCellValue('B'.$fila, $rows['prop_nombre'])
-->setCellValue('C'.$fila, $rows['prop_apellido'])
-->setCellValue('D'.$fila, $rows['prop_edad'])
-->setCellValue('E'.$fila, $rows['prop_direccion'])
-->setCellValue('F'.$fila, $rows['prop_ecivil'])
-->setCellValue('G'.$fila, $rows['prop_correo'])
-->setCellValue('H'.$fila, $rows['prop_cedula'])
-->setCellValue('I'.$fila, $rows['prop_telefono']);
+->setCellValue('A'.$fila, $rows['co_id'])
+->setCellValue('B'.$fila, $rows['propi_id'])
+->setCellValue('C'.$fila, $rows['co_fecha'])
+->setCellValue('D'.$fila, $rows['co_valortotal'])
+->setCellValue('E'.$fila, $rows['estado']);
 $fila++; //Sumamos 1 para pasar a la siguiente fila
 }
 $fila = $fila-1;
-$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:I".$fila);
+$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:E".$fila);
 	
 	$filaGrafica = $fila+2;
 	// definir origen de los valores
@@ -164,10 +152,6 @@ $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setAutoSize(true);
 
 $objPHPExcel->getActiveSheet()->setTitle('Propietario');
 
