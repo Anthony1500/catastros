@@ -33,21 +33,17 @@
             <div style="margin-bottom:5px">
                 <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" required="true" label="Parroquia " style="width:50%" >
             </div> 
-            <div style="margin-bottom:5px">
-                <select id="cc"label="Comunidades :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="propi_comunidad">
-                <option value="none" selected disabled hidden> 
-                Seleccione la comunidad 
-      </option> 
-                <option>Toallo Misquillí</option>
-                <option>Quinche</option>
-                <option>San Pablo</option>
-                <option>Angaguana Alto</option>
-                <option>Angaguana Bajo</option>
-                <option>Cuatro esquinas</option>
-            
-                
-                
-                
+            <div  style="margin-bottom:5px">
+            <select id="comu_id"  name ="comu_id"labelPosition="top"required="true" class="easyui-combobox" 
+            style="width:30%;"  data-options="
+                    url:'controlador/comunidad.php?op=selectcombo',
+                    method:'get',
+                    valueField:'comu_id',
+                    textField:'comu_nombre',
+                    panelHeight:'auto',
+                    label: 'Comunidades:',
+                    labelWidth:'160px'
+                    ">               
             </select>
       </form>
    
