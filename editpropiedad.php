@@ -42,20 +42,20 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="propi_ciudad" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_ciudad']?>"  required="true" label="Ciudad " style="width:50%" >
             </div> 
-            <div style="margin-bottom:5px">
-                <select id="cc"label="Comunidades :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="propi_comunidad">
-                <option   value="<?php echo $row ['propi_comunidad']?>" > <?php echo $row ['propi_comunidad']?></option>
-               
-      
-                <option>Toallo Misquillí</option>
-                <option>Quinche</option>
-                <option>San Pablo</option>
-                <option>Angaguana Alto</option>
-                <option>Angaguana Bajo</option>
-                <option>Cuatro esquinas</option>
-                </select>
-         
-         </div>       
+            <div  style="margin-bottom:5px">
+            <select id="propi_comunidad"  name ="propi_comunidad"labelPosition="top"required="true"value="<?php echo $row ['comu_nombre']?>" class="easyui-combobox" 
+            style="width:30%;"  data-options="
+                    url:'controlador/comunidad.php?op=selectcombo',
+                    method:'get',
+                    valueField:'comu_nombre',
+                    textField:'comu_nombre',
+                    panelHeight:'auto',
+                    label: 'Comunidades:',
+                    labelWidth:'160px'
+                    ">
+                    <option   value="<?php echo $row ['propi_comunidad']?>" > <?php echo $row ['propi_comunidad']?></option>               
+            </select>
+        </div>
         </form>  
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>

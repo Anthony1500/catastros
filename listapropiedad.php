@@ -27,8 +27,9 @@
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a  href="main.php?pag=newpropiedad" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
-        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" iconCls="icon-add" plain="true"  >Agregar propietario</a>
         <a href="main.php?pag=comunidad"  class="easyui-linkbutton"  iconCls="icon-add" plain="true"  >Agregar comunidad</a>
+        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" iconCls="icon-add" plain="true"  >Agregar propietario</a>
+        
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
         <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true"  onclick="mapa()">Busqueda en el Mapa</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
