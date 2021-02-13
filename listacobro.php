@@ -1,23 +1,24 @@
-<table id="dg" title="Lista de Cobros" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
-            url="controlador/cobro.php?op=select"
+<table id="dg" title="Lista de Cobro" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
+            url="controlador/usuario.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
-            <tr>
-                <th field="co_id" width="25%">ID </th>               
-                <th field="propi_id" width="25%">ID Propiedad</th>
-                <th field="co_fecha" width="25%">Fecha </th>
-                <th field="co_valortotal" width="25%">Valor Total</th>
-                <th field="estado" width="25%">Estado</th>
+            <tr>               
+                <th field="prop_id" width="25%">Codigo</th>
+                <th field="prop_nombre" width="25%">Nombres</th>
+                <th field="prop_apellido" width="25%">Apellidos</th>
+                <th field="prop_cedula" width="25%">Cedula</th>
+                
                
             </tr>
+
 
         </thead>
     </table> 
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
-        <a  href="main.php?pag=newcobro" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
+        <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="asignar()"  >Asignar Cobro</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editriego()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
@@ -32,6 +33,12 @@
             var row = $('#dg').datagrid('getSelected');
             if (row){
                 window.location.href= 'main.php?pag=editterreno&id='+row.co_id;
+            }
+        }
+        function asignar(){
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                window.location.href= 'main.php?pag=asignarcobro='+row.prop_id;
             }
         }
         function editpropi(){
