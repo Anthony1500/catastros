@@ -38,7 +38,7 @@
         function asignar(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                window.location.href= 'main.php?pag=asignarcobro='+row.prop_id;
+                window.location.href= 'main.php?pag=asignarcobro1&id='+row.prop_id;
             }
         }
         function editpropi(){
