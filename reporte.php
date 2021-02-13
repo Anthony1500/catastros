@@ -174,9 +174,10 @@ $objPHPExcel->getActiveSheet()->setTitle('Propietario');
 $objPHPExcel->setActiveSheetIndex(0);
 
 getHeaders();
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 	header('Content-Disposition: attachment;filename="Catastros.xlsx"');
 	header('Cache-Control: max-age=0');
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+	ob_end_clean();
 $objWriter->save('php://output');
 exit;
