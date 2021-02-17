@@ -41,6 +41,7 @@ if( isset($_GET["id"]))
                     fitColumns:true,
                     labelWidth:'160px'
                     ">               
+                    <option   value="<?php echo $row ['propi_id']?>" > <?php echo $row ['propi_id']?></option>  
             </select>
         </div>     
             <div style="margin-bottom:5px">
@@ -48,27 +49,37 @@ if( isset($_GET["id"]))
             </div> 
             <div style="margin-bottom:5px">
                 <input name="co_valortotal" labelPosition="top" value="<?php echo $row ['co_valortotal']?>" class="easyui-textbox" required="true" label="Valor Total :" style="width:50%" >
-            </div>              
+            </div>   
+                       
+
+            <div  style="margin-bottom:5px">
+            <select id="cc" name="estado" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Estado  :"  style="width:50%">
+            
+            
+        <option   value="<?php echo $row ['estado']?>" > <?php echo $row ['estado']?></option>
+        <option>Pagado</option>
+       <option>Por Pagar</option>
+         </select>
+         
+        </div>
         
             <div style="margin-bottom:5px">
-                <select id="cc"label="Estado :" labelPosition="top" value="<?php echo $row ['estado']?>" style="width:50%" class="easyui-combobox" required="true" name="estado">
-                <option  selected="selected" >- Seleccionar -</option>
-                <option>Pagado</option>
-                <option>Por Pagar</option>
-                
-            </select>
-            </div> 
+                <input name="sumacobro" labelPosition="top" value="<?php echo $row ['sumacobro']?>" class="easyui-textbox" required="true" label="Valor Total :" style="width:50%" >
+            </div>    
             
              
         </form>  
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
-        <a  href="main.php?pag=listaterrenos" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
+        <a  href="main.php?pag=listacobro" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
     
 
     <script type="text/javascript">
+
+
+
       function myformatter(date){
             var y = date.getFullYear();
             var m = date.getMonth()+1;
@@ -92,7 +103,7 @@ if( isset($_GET["id"]))
        $('#cc').combobox({
            
            
-            panelHeight:'260',
+            panelHeight:'150',
             
             onSelect: function(rec)
             {

@@ -89,10 +89,10 @@ catch (Exception $e){ //usar logs
                 $co_fecha = $_POST['co_fecha']; 
                 $co_valortotal = $_POST['co_valortotal'];   
                 $estado = $_POST['estado']; 
-                
+                $sumacobro = $_POST['sumacobro']; 
                 
               
-                $sql = "INSERT INTO cobro (prop_id,co_fecha,co_valortotal,estado) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado')"; 
+                $sql = "INSERT INTO cobro (propi_id,co_fecha,co_valortotal,estado,sumacobro) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado','$sumacobro')"; 
                
                 echo $sql;
                 $insert = mysqli_query($con,$sql); 

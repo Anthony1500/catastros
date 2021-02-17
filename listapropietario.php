@@ -22,6 +22,7 @@
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
+        <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="asignar()" >Asignar Cobro</a>
         <a  href="main.php?pag=newpropietario" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
@@ -39,7 +40,12 @@
                 window.location.href= 'main.php?pag=editpropietario&id='+row.prop_id;
             }
         }
-       
+        function asignar(){
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                window.location.href= 'main.php?pag=asignarcobro1&id='+row.prop_id;
+            }
+        }
 
 
         function destroyUser(){

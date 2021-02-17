@@ -1,13 +1,15 @@
 <table id="dg" title="Lista de Cobro" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
-            url="controlador/usuario.php?op=select"
+            url="controlador/cobro.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="prop_id" width="25%">Codigo</th>
-                <th field="prop_nombre" width="25%">Nombres</th>
-                <th field="prop_apellido" width="25%">Apellidos</th>
-                <th field="prop_cedula" width="25%">Cedula</th>
+            <th field="co_id" width="25%">ID </th>               
+                <th field="propi_id" width="25%">ID Propiedad</th>
+                <th field="co_fecha" width="25%">Fecha </th>
+                <th field="co_valortotal" width="25%">Valor Total</th>
+                <th field="estado" width="25%">Estado</th>
+                <th field="sumacobro" width="25%">Suma de los metros</th>
                 
                
             </tr>

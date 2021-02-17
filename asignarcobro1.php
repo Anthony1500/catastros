@@ -7,7 +7,8 @@ require ('controlador/coneccion.php');
 if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
-    $sql = "SELECT * FROM propietario where prop_id='$id'";
+    $sql = "SELECT p.prop_id, p.prop_nombre, p.prop_apellido, p.prop_edad, p.prop_direccion, p.prop_ecivil, p.prop_correo, p.prop_cedula, p.prop_telefono, sum(t.propi_metros) AS suma
+    FROM terrenosvista t, propietario p, propiedad p2  where p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'";
     $result = mysqli_query($con,$sql);
      
     $row = mysqli_fetch_assoc($result) ;
@@ -15,38 +16,12 @@ if( isset($_GET["id"]))
 
 ?>
 
+<div id="p" class="easyui-panel" title="Asignacion de Propiedad" style="width:100%;height:100%; ">
+<form id="frmproo" method="post"     style="margin:0;padding:20px 50px">
+           
 
-<head>
-
-<title>Ejemplo aprenderaprogramar.com</title>
-
-<meta charset="utf-8">
-
-</head>
-
-<body >
-<center> 
-
-<?php
-       if (!empty($_POST['sumametros'])) {
-        $res ="SELECT sum(t.propi_metros) AS suma from terrenosvista t, propietario p, propiedad p2 
-        WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$prop_id'";
-    }else{
-        
-    }
-    
-    
-    
-     
-         ?>
-
-
-
-<div id="p" class="easyui-panel" title="Buscar" style="width:100%;height:100%; ">
-<form id="frmequipo" method="post"     style="margin:0;padding:20px 50px">
 
 <div style="margin-bottom:5px">
-
                 <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
             </div>
             <div style="margin-bottom:20px">
@@ -55,20 +30,31 @@ if( isset($_GET["id"]))
         <div style="margin-bottom:5px">
                 <input name="co_valortotal" labelPosition="top"  class="easyui-textbox" label="Valor Total:" style="width:50%"/>
             </div>
+            
             <div style="margin-bottom:5px">
-                <input name="estado" labelPosition="top"  class="easyui-textbox"  label="Estado:" style="width:50%"/>
+                <select label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="estado">
+                <option  selected="selected" >- Seleccionar -</option>
+                <option>Pagado</option>
+                <option>Por pagar</option>
+                
+                
+            </select>
+            </div> 
+
+
+            <div style="margin-bottom:5px">
+                <input name="sumacobro"  value="<?php echo $row ['suma']?>"  labelPosition="top"  class="easyui-textbox"  label="Suma:" style="width:50%"/>
             </div>
 
-        
-          
-        
-            
-            
-<input value="Buscar" type="submit" name="busqueda" />
-</form>
 
 
-<?php
+            
+            <input value="Buscar" type="submit" name="busqueda" />
+           
+      </form>
+   
+     
+    <?php
  if(isset($_POST['busqueda']))
 {
     $prop_id = $_POST['prop_id'];   
@@ -126,7 +112,7 @@ if( isset($_GET["id"]))
 </thead>
 
 
-  <tr><td>Suma de los Metros</td><td><input type="text" required  name="sumametros"  id="sumametros" readonly value="<?php echo $registro2['suma'] ?>"></td><td><input type="submit" name="button" id="button" value="Calcular" /></td> </tr>
+ 
 
  <?php
 
@@ -152,13 +138,12 @@ if( isset($_GET["id"]))
 
 </html>
 <div style="text-align:center;padding:5px 0">
-        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
+        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" onclick="saveUser1()"  style="width:90px">Guardar</a>
         <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
-    
  
-<script type="text/javascript">
+    <script type="text/javascript">
        function myformatter(date){
             var y = date.getFullYear();
             var m = date.getMonth()+1;
@@ -187,10 +172,8 @@ if( isset($_GET["id"]))
             
            }
        });
-
-       
-       function saveUser(){              
-           $('#frmequipo').form('submit',{
+        function saveUser(){              
+           $('#frmproo').form('submit',{
                 url: 'controlador/usuario.php?op=insertcobro',
                 onSubmit: function(){
                     var esvalido =  $(this).form('validate');
@@ -210,9 +193,12 @@ if( isset($_GET["id"]))
                             title: 'exito',
                             msg: result
                         });
-                    window.location.href= 'main.php?pag=listacobro';
+                    window.location.href= 'main.php?pag=listapropietario';
                 }
             }); 
         }
-
-       </script>
+        
+        
+    </script>    
+    
+ 

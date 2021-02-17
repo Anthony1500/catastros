@@ -81,16 +81,16 @@ catch (Exception $e){ //usar logs
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['co_fecha'])&&!empty($_POST['co_valortotal'])&&!empty($_POST['estado'])){ 
+    if(!empty($_POST['co_id'])&&!empty($_POST['propi_id'])&&!empty($_POST['co_fecha'])&&!empty($_POST['co_valortotal'])&&!empty($_POST['estado'])&&!empty($_POST['sumacobro'])){ 
                 $co_id = $_POST['co_id'];
                 $propi_id = $_POST['propi_id'];   
                 $co_fecha = $_POST['co_fecha']; 
                 $co_valortotal= $_POST['co_valortotal'];   
                 $estado = $_POST['estado']; 
-         
+                $sumacobro = $_POST['sumacobro']; 
            
         
-                $sql = "UPDATE cobro SET  propi_id='$propi_id',co_fecha='$co_fecha',co_valortotal='$co_valortotal',estado='$estado' WHERE co_id ='$co_id'";
+                $sql = "UPDATE cobro SET  propi_id='$propi_id',co_fecha='$co_fecha',co_valortotal='$co_valortotal',estado='$estado',sumacobro='$sumacobro' WHERE co_id ='$co_id'";
                $update = mysqli_query($con,$sql);
 
      
