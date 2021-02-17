@@ -12,45 +12,41 @@ if( !isset($op) )
   exit;
 } 
 switch ($op) { 
-    case 'select':
-        $condicion=' ';
-        if (isset($_POST['filtro'] )){
-        $filtro=$_POST['filtro'] ;
-
-        $condicion=$condicion." where cod_bodega || nombreb like '%".$filtro."%' ";
-        
-        }
-            $resultqry = pg_query($dbconn,"SELECT * FROM bodega".$condicion );
-            if (!$resultqry) {
-            echo json_encode("Ocurrió un error en la consulta");
-            exit;
-            }
-            $result = array();
-            $items = array();  
-         
-            while($row = pg_fetch_object($resultqry)) {
-               array_push($items, $row);
-            }
-            $result["rows"] = $items;
-            echo json_encode($result);
-            break;
-
-            
-            case 'selectcombo':
-                $resultqry = pg_query($dbconn, 'SELECT * FROM bodega ' );
-                if (!$resultqry) {
-                echo json_enconde("Ocurrió un error en la consulta");
-                exit;
-                }
+    case 'insertcobro':
+        $archivoguardado=0;
+        $mensaje = "";
+            $response = array( 
+                    'status' => 0, 
+                    'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
+                );          
+                try{
+                    $prop_id = $_POST['prop_id'];   
+                    $co_fecha = $_POST['co_fecha']; 
+                    $co_valortotal = $_POST['co_valortotal'];   
+                    $estado = $_POST['estado']; 
+                    
+                  
+                    $sql = "INSERT INTO cobro (prop_id,co_fecha,co_valortotal,estado) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado')"; 
+                   
+                    echo $sql;
+                    $insert = mysqli_query($con,$sql); 
+                 
+                if($insert){ 
+                    $response['status'] = 1; 
+                    $response['msg'] = '¡Los datos del usuario se han agregado con éxito!'; 
+                } 
+    }
+    
+    
+    catch (Exception $e){ //usar logs
+        $response = array( 
+            'status' => 0, 
+            'msg' =>  'El Usuario ya existe'  
+        );           
+    }
                 
-                $items=array();
-             
-                while($row = pg_fetch_object($resultqry)) {
-                   array_push($items, $row);
-                }
-              
-                echo json_encode($items);
-                break;
+                echo json_encode($response); 
+     break; 
  case 'insert':
  $response = array( 
                 'status' => 0, 

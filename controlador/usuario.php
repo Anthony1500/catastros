@@ -77,6 +77,42 @@ catch (Exception $e){ //usar logs
             
             echo json_encode($response); 
  break; 
+ case 'insertcobro':
+    $archivoguardado=0;
+    $mensaje = "";
+        $response = array( 
+                'status' => 0, 
+                'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
+            );          
+            try{
+                $prop_id = $_POST['prop_id'];   
+                $co_fecha = $_POST['co_fecha']; 
+                $co_valortotal = $_POST['co_valortotal'];   
+                $estado = $_POST['estado']; 
+                
+                
+              
+                $sql = "INSERT INTO cobro (prop_id,co_fecha,co_valortotal,estado) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado')"; 
+               
+                echo $sql;
+                $insert = mysqli_query($con,$sql); 
+             
+            if($insert){ 
+                $response['status'] = 1; 
+                $response['msg'] = '¡Los datos del usuario se han agregado con éxito!'; 
+            } 
+}
+
+
+catch (Exception $e){ //usar logs
+    $response = array( 
+        'status' => 0, 
+        'msg' =>  'El Usuario ya existe'  
+    );           
+}
+            
+            echo json_encode($response); 
+ break; 
 
  case 'update':
     $response = array( 
