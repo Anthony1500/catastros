@@ -20,7 +20,7 @@
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
-        <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="asignar()"  >Asignar Cobro</a>
+        
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editriego()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
@@ -37,12 +37,7 @@
                 window.location.href= 'main.php?pag=editterreno&id='+row.co_id;
             }
         }
-        function asignar(){
-            var row = $('#dg').datagrid('getSelected');
-            if (row){
-                window.location.href= 'main.php?pag=asignarcobro1&id='+row.prop_id;
-            }
-        }
+       
         function editpropi(){
             var row = $('#dg').datagrid('getSelected');
             if (row){

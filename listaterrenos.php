@@ -8,6 +8,7 @@
                 <th field="prop_nombre" width="25%">Nombres</th>
                 <th field="prop_apellido" width="25%">Apellidos </th>
                 <th field="prop_cedula" width="25%">Cédula</th>
+                <th field="propi_comunidad" width="25%">Comunidad</th>
                 <th field="propi_id" width="25%">ID Propiedad</th>
                 <th field="propi_metros" width="25%">Metros m²</th>
                 <th field="propi_latitud" width="25%">Latitud</th>

@@ -43,7 +43,7 @@ if( isset($_GET["id"]))
 
 
             <div style="margin-bottom:5px">
-                <input name="sumacobro"  value="<?php echo $row ['suma']?>"  labelPosition="top"  class="easyui-textbox"  label="Suma:" style="width:50%"/>
+                <input name="sumacobro"  value="<?php echo $row ['suma']?>"  labelPosition="top"  class="easyui-textbox"  readonly=»readonly» label="Suma de los metros:" style="width:25%"/>
             </div>
 
 

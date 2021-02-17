@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR propi_ciudad like '%".$filtro."%' ";
+        $condicion=$condicion."where co_fecha like '%".$filtro."%' OR estado like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM cobro".$condicion );

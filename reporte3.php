@@ -39,7 +39,7 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 	$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
 	$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
 	$objDrawing->setHeight(100);
-	$objDrawing->setCoordinates('E1');
+	$objDrawing->setCoordinates('F1');
 	$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 	$estiloTituloReporte = array(
 		'font' => array(
@@ -109,8 +109,8 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		)
 		));
 		
-		$objPHPExcel->getActiveSheet()->getStyle('A1:E5')->applyFromArray($estiloTituloReporte);
-		$objPHPExcel->getActiveSheet()->getStyle('A6:E6')->applyFromArray($estiloTituloColumnas);
+		$objPHPExcel->getActiveSheet()->getStyle('A1:F5')->applyFromArray($estiloTituloReporte);
+		$objPHPExcel->getActiveSheet()->getStyle('A6:F6')->applyFromArray($estiloTituloColumnas);
 		
 		$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE COBRO');
 		$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
@@ -124,6 +124,8 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		$objPHPExcel->getActiveSheet()->setCellValue('D6', 'VALOR TOTAL    ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->setCellValue('E6', 'ESTADO      ');
+		$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(10);
+		$objPHPExcel->getActiveSheet()->setCellValue('F6', 'SUMA DE LOS METROS');
 		
 
 $i = 2;
@@ -134,11 +136,13 @@ $objPHPExcel->setActiveSheetIndex(0)
 ->setCellValue('B'.$fila, $rows['propi_id'])
 ->setCellValue('C'.$fila, $rows['co_fecha'])
 ->setCellValue('D'.$fila, $rows['co_valortotal'])
-->setCellValue('E'.$fila, $rows['estado']);
+->setCellValue('E'.$fila, $rows['estado'])
+->setCellValue('F'.$fila, $rows['sumacobro']);
+
 $fila++; //Sumamos 1 para pasar a la siguiente fila
 }
 $fila = $fila-1;
-$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:E".$fila);
+$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:f".$fila);
 	
 	$filaGrafica = $fila+2;
 	// definir origen de los valores
@@ -152,8 +156,9 @@ $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
 
-$objPHPExcel->getActiveSheet()->setTitle('Propietario');
+$objPHPExcel->getActiveSheet()->setTitle('Cobro');
 
 $objPHPExcel->setActiveSheetIndex(0);
 
