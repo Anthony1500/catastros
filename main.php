@@ -120,6 +120,17 @@
     border-radius: 6px;
     border: 2px solid #0016b0;
   }
+  .fantasma{
+    text-decoration: none;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #4A5BE8;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+ 
 </style>
 </body>
 </html>

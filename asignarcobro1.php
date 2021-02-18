@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
 <?php
 require ('controlador/coneccion.php'); 
 if( isset($_GET["id"]))
@@ -33,6 +32,8 @@ if( isset($_GET["id"]))
 <div style="margin-bottom:5px">
                 <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
             </div>
+            <input class="fantasma" value="Buscar Terreno del Propietario" type="submit" name="busqueda" />
+
             <div style="margin-bottom:20px">
             <input name="co_fecha" class="easyui-datebox" label="Fecha de cobro:" labelPosition="top"  data-options="formatter:myformatter,parser:myparser" style="width:50%;">
         </div>
@@ -41,7 +42,7 @@ if( isset($_GET["id"]))
             </div>
             
             <div style="margin-bottom:5px">
-                <select label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="Estado">
+                <select id="cc" label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="estado">
                 <option  selected="selected" >- Seleccionar -</option>
                 <option>Pagado</option>
                 <option>Por pagar</option>
@@ -58,8 +59,8 @@ if( isset($_GET["id"]))
 
 
             
-            <input value="Buscar" type="submit" name="busqueda" />
-
+            
+           
       </form>
    
      
@@ -180,10 +181,13 @@ if( isset($_GET["id"]))
                 return new Date();
             }
         }
+
+
+
        $('#cc').combobox({
            
            
-           panelHeight:'80',
+           panelHeight:'100',
            
            onSelect: function(rec)
            {

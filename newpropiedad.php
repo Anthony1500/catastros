@@ -3,11 +3,9 @@
            
 
 
-               <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad Id " style="width:50%" >
-            </div> 
+              
             <div style="margin-bottom:5px">
-                <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Propiedad metros " style="width:50%" >
+                <input name="propi_metros" labelPosition="top" class="easyui-textbox" required="true" label="Metros " style="width:50%" >
             </div> 
             <div style="margin-bottom:5px">
                 <input name="propi_longitud" labelPosition="top" class="easyui-textbox" required="true" label=" Longitud " style="width:50%" >
@@ -36,11 +34,11 @@
                 <input name="propi_parroquia" labelPosition="top" class="easyui-textbox" required="true" label="Parroquia " style="width:50%" >
             </div> 
             <div  style="margin-bottom:5px">
-            <select id="comu_id"  name ="comu_id"labelPosition="top"required="true" class="easyui-combobox" 
+            <select id="comu_id"  name ="propi_comunidad"labelPosition="top"required="true" class="easyui-combobox" 
             style="width:30%;"  data-options="
                     url:'controlador/comunidad.php?op=selectcombo',
                     method:'get',
-                    valueField:'comu_id',
+                    valueField:'comu_nombre',
                     textField:'comu_nombre',
                     panelHeight:'auto',
                     label: 'Comunidades:',

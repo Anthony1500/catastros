@@ -44,7 +44,7 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                $propi_id = $_POST['propi_id'];   
+                 
                 $propi_metros = $_POST['propi_metros']; 
                 $propi_longitud = $_POST['propi_longitud'];   
                 $propi_latitud = $_POST['propi_latitud'];
@@ -56,8 +56,8 @@ switch ($op) {
                 $propi_parroquia = $_POST['propi_parroquia']; 
                 $propi_comunidad = $_POST['propi_comunidad']; 
                 
-                $sql = "INSERT INTO propiedad (propi_id,propi_metros, propi_longitud, propi_latitud,utm, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia,propi_comunidad) 
-                VALUES ('$propi_id','$propi_metros','$propi_longitud','$propi_latitud','$utm','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia','$propi_comunidad')"; 
+                $sql = "INSERT INTO propiedad (propi_metros, propi_longitud, propi_latitud,utm, propi_sector, propi_calleprincipal, propi_callesecundaria, propi_ciudad, propi_parroquia,propi_comunidad) 
+                VALUES ('$propi_metros','$propi_longitud','$propi_latitud','$utm','$propi_sector','$propi_calleprincipal','$propi_callesecundaria','$propi_ciudad','$propi_parroquia','$propi_comunidad')"; 
                
                
 
