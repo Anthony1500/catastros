@@ -11,12 +11,21 @@ if( isset($_GET["id"]))
     FROM terrenosvista t, propietario p, propiedad p2  where p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'";
     $result = mysqli_query($con,$sql);
      
+    $totalFilas    =   mysqli_num_rows($result);
+    if($totalFilas == 0){
+        ?>
+        <script language="javascript">alert("El usuario no tiene ");
+        window.location='listapropietario.php';
+        </script>
+        
+        <?php
+    }
     $row = mysqli_fetch_assoc($result) ;
 }
 
 ?>
 
-<div id="p" class="easyui-panel" title="Asignacion de Propiedad" style="width:100%;height:100%; ">
+<div id="p" class="easyui-panel" title="Asignación de Cobro" style="width:100%;height:100%; ">
 <form id="frmproo" method="post"     style="margin:0;padding:20px 50px">
            
 
@@ -32,7 +41,7 @@ if( isset($_GET["id"]))
             </div>
             
             <div style="margin-bottom:5px">
-                <select label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="estado">
+                <select label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="Estado">
                 <option  selected="selected" >- Seleccionar -</option>
                 <option>Pagado</option>
                 <option>Por pagar</option>
@@ -50,7 +59,7 @@ if( isset($_GET["id"]))
 
             
             <input value="Buscar" type="submit" name="busqueda" />
-           
+
       </form>
    
      
@@ -62,29 +71,38 @@ if( isset($_GET["id"]))
  
     $sql = "SELECT t.propi_id, t.propi_metros, t.propi_comunidad from terrenosvista t, propietario p, propiedad p2 
     WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$prop_id'"; 
-   
-    
     $result= mysqli_query($con,$sql); 
-    if(empty ($result)){
+    $totalFilas    =    mysqli_num_rows($result);
+    if($totalFilas == 0){   
+        ?>
+     <script language="javascript">alert("El propietario no tiene terrenos asignados");
+        window.location='main.php?pag=listapropietario';
+        </script>
         
-    }
-   else{
+        <?php
+        }else{
+    ?>
+
+    <table style="margin: 0 auto;width: 50%;height: 100px;" border="2"  >
+    <tr><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">ID Propiedad</h6></font></th><th ><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Metros</h6></font></th>
+<th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Comunidad </h6></font></th></tr>
+    
+    <?php
     while($impresion=mysqli_fetch_assoc($result))
     {
         ?>
-    <table style="margin: 0 auto;width: 50%;height: 100px;" border="2"  >
-    <thead> 
-<tr><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">ID Propiedad</h6></font></th><th ><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Metros</h6></font></th>
-<th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Comunidad </h6></font></th></tr>
-</thead>
+    
+   
+
 <tr><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_id'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_metros'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_comunidad'] ?></h6></font></td></tr>
+<?php }} ?>
 </table>
 
 
 
 
         <?php
-    }
+    
     $sql1 = "SELECT sum(t.propi_metros) AS suma from terrenosvista t, propietario p, propiedad p2 
     WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$prop_id'"; 
     
@@ -126,7 +144,7 @@ if( isset($_GET["id"]))
  
  
          <?php
-   }
+   
 
 }
 
@@ -139,7 +157,7 @@ if( isset($_GET["id"]))
 </html>
 <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" onclick="saveUser1()"  style="width:90px">Guardar</a>
-        <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
+        <a  href="main.php?pag=listapropietario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
  
@@ -196,6 +214,10 @@ if( isset($_GET["id"]))
                     window.location.href= 'main.php?pag=listapropietario';
                 }
             }); 
+        }
+
+        window.onload=function ejemplo(){
+            alert('ekemplp');
         }
         
         
