@@ -4,13 +4,14 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="propi_id" width="25%">Codigo Propiedad</th>
+                <th field="propi_id" width="15%">Codigo Propiedad</th>
                 
                 <th field="propi_metros" width="25%">Metros m²</th>
                 <th field="propi_longitud" width="25%">Longitud</th>
                 <th field="propi_latitud" width="25%">Latitud</th>
+                <th field="utm" width="15%">coordenadas UTM</th>
                 <th field="propi_ciudad" width="25%">Ciudad</th>
-                <th field="propi_parroquia" width="25%">Parroquia</th>
+                <th field="propi_parroquia" width="15%">Parroquia</th>
                 <th field="propi_comunidad" width="25%">Comunidad</th>
                 <th field="propi_sector" width="25%">Sector</th>
                 <th field="propi_calleprincipal" width="25%">Calle Principal</th>

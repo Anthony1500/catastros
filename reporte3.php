@@ -17,11 +17,11 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 	$objPHPExcel  = new PHPExcel();
 	
 	//Propiedades de Documento
-	$objPHPExcel->getProperties()->setCreator("Anthony")->setDescription("Reporte de los Propietarios");
+	$objPHPExcel->getProperties()->setCreator("Anthony")->setDescription("Reporte de los Cobros");
 	
 	//Establecemos la pestaña activa y nombre a la pestaña
 	$objPHPExcel->setActiveSheetIndex(0);
-	$objPHPExcel->getActiveSheet()->setTitle("PROPIETARIO");
+	$objPHPExcel->getActiveSheet()->setTitle("Cobros");
 	
 	$objDrawing = new PHPExcel_Worksheet_MemoryDrawing();
 	$objDrawing->setName('Logotipo');
@@ -112,20 +112,20 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		$objPHPExcel->getActiveSheet()->getStyle('A1:F5')->applyFromArray($estiloTituloReporte);
 		$objPHPExcel->getActiveSheet()->getStyle('A6:F6')->applyFromArray($estiloTituloColumnas);
 		
-		$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE COBRO');
+		$objPHPExcel->getActiveSheet()->setCellValue('B3', '   REPORTE DE COBRO');
 		$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO       ');
+		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO  ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
 		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIEDAD      ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'FECHA     ');
+		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'FECHA   ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('D6', 'VALOR TOTAL    ');
+		$objPHPExcel->getActiveSheet()->setCellValue('D6', 'VALOR TOTAL   ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('E6', 'ESTADO      ');
+		$objPHPExcel->getActiveSheet()->setCellValue('E6', 'ESTADO   ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('F6', 'SUMA DE LOS METROS');
+		$objPHPExcel->getActiveSheet()->setCellValue('F6', 'SUMA DE LOS METROS ');
 		
 
 $i = 2;
@@ -142,7 +142,7 @@ $objPHPExcel->setActiveSheetIndex(0)
 $fila++; //Sumamos 1 para pasar a la siguiente fila
 }
 $fila = $fila-1;
-$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:f".$fila);
+$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:F".$fila);
 	
 	$filaGrafica = $fila+2;
 	// definir origen de los valores

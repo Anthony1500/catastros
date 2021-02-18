@@ -25,7 +25,10 @@ if( isset($_GET["id"]))
             </div> 
             <div style="margin-bottom:5px">
                 <input name="propi_latitud" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['propi_latitud']?>" required="true" label="Latitud " style="width:50%" >
-            </div>              
+            </div> 
+            <div style="margin-bottom:5px">
+                <input name="utm" labelPosition="top" class="easyui-textbox"  value="<?php echo $row ['utm']?>" required="true" label="UTM " style="width:50%" >
+            </div>             
             
             <div style="margin-bottom:5px">
                 <input name="propi_sector" labelPosition="top" class="easyui-textbox" value="<?php echo $row ['propi_sector']?>"  required="true" label="Sector " style="width:50%" >

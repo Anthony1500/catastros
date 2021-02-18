@@ -22,8 +22,8 @@
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
+        <a  href="main.php?pag=newpropietario" class="easyui-linkbutton"  iconCls="icon-add" plain="true"  >Nuevo</a></a>
         <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="asignar()" >Asignar Cobro</a>
-        <a  href="main.php?pag=newpropietario" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
@@ -32,6 +32,7 @@
   
 
     <script type="text/javascript">
+    
         var url;
         
         function editUser(){
@@ -79,6 +80,4 @@ if (row){
             $('#dg').datagrid('reload',{filtro:value});   
         }
     </script>
-
     
- 

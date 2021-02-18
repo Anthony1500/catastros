@@ -1,4 +1,22 @@
 .icon {
    
-    background: url(./imagenes/user.png) no-repeat center center;
+background: url(./imagenes/user.png) no-repeat center center;
+ }
+ .owner {
+ background: url(./imagenes/owner.png) no-repeat center center;
+}
+.property {
+background: url(./imagenes/property.png) no-repeat center center;
+}
+.ground {
+ background: url(./imagenes/ground.png) no-repeat center center;
+}
+.irrigation {
+ background: url(./imagenes/irrigation.png) no-repeat center center;
+}
+.payment {
+ background: url(./imagenes/payment.png) no-repeat center center;
     }
+.report {
+background: url(./imagenes/report.png) no-repeat center center;
+ }
