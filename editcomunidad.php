@@ -11,11 +11,11 @@ if( isset($_GET["id"]))
 
 ?>
 
-<div id="$id" class="easyui-panel" title="Editar Propiedad" style="width:100%;height:100%; ">
+<div id="$id" class="easyui-panel" title="Editar Comunidad" style="width:100%;height:100%; ">
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="comu_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['comu_id']?>" class="easyui-textbox" required="true" label="Código Cobro " style="width:20%"/>
+                <input name="comu_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['comu_id']?>" class="easyui-textbox" required="true" label="Código Comunidad " style="width:20%"/>
             </div>
                      
 

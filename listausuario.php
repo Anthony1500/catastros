@@ -20,11 +20,11 @@
         </thead>
     </table> 
    
-    <div id="toolbar">      
-        <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar " style="width:250px">
-        <a  href="main.php?pag=newusuario" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
+    <div id="toolbar" >      
+        <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar "   style="width:250px">
+        <a  href="main.php?pag=newusuario" class="easyui-linkbutton" iconCls="icon-add" data-toggle="tooltip"title="Nuevo Usuario." plain="true"  >Nuevo</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" data-toggle="tooltip"title="Selecciona una fila para editar." onclick="editUser()">Editar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" data-toggle="tooltip"title="Selecciona una fila para borrar." onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
     
@@ -70,7 +70,8 @@
             $('#dg').datagrid('reload');   
         }
         function buscar(value){
-            $('#dg').datagrid('reload',{filtro:value});   
+            $('#dg').datagrid('reload',{filtro:value}); 
+                    
         }
     </script>    
 

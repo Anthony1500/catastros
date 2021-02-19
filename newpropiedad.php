@@ -41,7 +41,7 @@
                     valueField:'comu_nombre',
                     textField:'comu_nombre',
                     panelHeight:'auto',
-                    label: 'Comunidades:',
+                    label: 'Comunidad:',
                     labelWidth:'160px'
                     ">               
             </select>

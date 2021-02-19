@@ -27,14 +27,18 @@
    
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
-        <a  href="main.php?pag=newpropiedad" class="easyui-linkbutton" iconCls="icon-add" plain="true"  >Nuevo</a>
-        <a href="main.php?pag=comunidad"  class="easyui-linkbutton"  iconCls="icon-add" plain="true"  >Agregar comunidad</a>
-        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" iconCls="icon-add" plain="true"  >Agregar propietario</a>
+        <a  href="main.php?pag=newpropiedad" class="easyui-linkbutton" iconCls="icon-add" data-toggle="tooltip"title="Nueva propiedad."plain="true"  >Nuevo</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" data-toggle="tooltip"title="Selecciona una fila para editar."onclick="editUser()">Editar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" data-toggle="tooltip"title="Selecciona una fila para borrar." onclick="destroyUser()">Eliminar</a>
         
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Editar</a>
-        <a  href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true"  onclick="mapa()">Busqueda en el Mapa</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Eliminar</a>
+        
+        <a  href="javascript:void(0)" class="easyui-linkbutton" onclick="editpropi()" data-toggle="tooltip"title="Selecciona una propiedad para agregarle un propietario." plain="true"  ><img src="imagenes/asignar.png"> Agregar propietario</a>
+        
+        
+        <a  href="javascript:void(0)" class="easyui-linkbutton"  plain="true" data-toggle="tooltip"title="Selecciona una propiedad para buscar en el mapa."  onclick="mapa()"><img src="imagenes/map.png"> Busqueda en el Mapa</a>
+        <a href="main.php?pag=comunidad"  class="easyui-linkbutton"   plain="true"  ><img src="imagenes/comunidad.png"> Agregar comunidad</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
+        
     </div>
     
   

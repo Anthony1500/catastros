@@ -22,13 +22,13 @@ if( isset($_GET["id"]))
      <div class="row">       
         <div class="col-sm-4">  
            <div class="form-group">
-              <input type='text' id='busqueda'name='busqueda' value="<?php echo $row ['propi_latitud'].",".  $row ['propi_longitud']?>" class="form-control" placeholder='Pon la latitud y longitud  aquí ejemplo: -1.708915, -79.040429' />
+              <input type='text' id='busqueda'name='busqueda' value="<?php echo $row ['propi_latitud'].",".  $row ['propi_longitud']?>" class="form-control" placeholder='Pon la latitud y longitud  aquí ejemplo: -1.80891, -79.09404' />
              
            </div>
            
         </div>
         <div class="form-group">
-           <input onclick="init()" value='Localizar' class="btn btn-success" />
+           <input onclick="init()" value='Localizar'data-toggle="tooltip"title="Solo se puede buscar con la latitud y longitud."  class="btn btn-success" />
            <a  href="main.php?pag=listapropiedad" class="btn btn-secondary" >Regresar</a>
         </div>
      </div>
