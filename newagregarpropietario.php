@@ -33,10 +33,10 @@ if( isset($_GET["id"]))
                     label: 'Nombre Propietario:',
                     columns: [[
                         {field:'prop_id',title:'Codigo',width:80},
-                        {field:'prop_nombre',title:'Nombre',width:120},
-                        {field:'prop_apellido',title:'Apellido',width:80,align:'right'},
-                        {field:'prop_cedula',title:'Cedula',width:80,align:'right'},
-                        {field:'prop_correo',title:'Correo',width:200},
+                        {field:'prop_nombre',title:'Nombre',width:150},
+                        {field:'prop_apellido',title:'Apellido',width:180,align:'right'},
+                        {field:'prop_cedula',title:'Cedula',width:110,align:'right'},
+                        {field:'prop_correo',title:'Correo',width:205},
                                           
                         
                     ]],
