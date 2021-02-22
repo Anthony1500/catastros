@@ -3,7 +3,7 @@ require ('controlador/coneccion.php');
 if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
-    $sql = "SELECT * FROM cobro where co_id='$id'";
+    $sql = "select p.prop_nombre ,p.prop_apellido ,c.co_fecha ,c.co_id ,c.co_valortotal ,c.estado ,c.prop_id,c.sumacobro from propietario p,cobro c where p.prop_id=c.prop_id and  c.co_id='$id'";
     $result = mysqli_query($con,$sql);
      
     $row = mysqli_fetch_assoc($result) ;
@@ -50,6 +50,7 @@ if( isset($_GET["id"]))
             <div style="margin-bottom:5px">
                 <input name="co_valortotal" labelPosition="top" value="<?php echo $row ['co_valortotal']?>" class="easyui-textbox" required="true" label="Valor Total :" style="width:50%" >
             </div>   
+                    
                        
 
             <div  style="margin-bottom:5px">
@@ -67,6 +68,12 @@ if( isset($_GET["id"]))
                 <input name="sumacobro" labelPosition="top" value="<?php echo $row ['sumacobro']?>"  readonly=»readonly» class="easyui-textbox" required="true" label="Suma de los metros :" style="width:50%" >
             </div>    
             
+            <div style="margin-bottom:5px">
+                <input labelPosition="top"  readonly=»readonly» value="<?php echo $row ['prop_nombre']?>" class="easyui-textbox" required="true" label="Nombre :" style="width:50%" >
+            </div>   
+            <div style="margin-bottom:5px">
+                <input labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_apellido']?>" class="easyui-textbox" required="true" label="Apellido :" style="width:50%" >
+            </div>   
              
         </form>  
         <div style="text-align:center;padding:5px 0">

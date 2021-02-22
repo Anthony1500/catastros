@@ -22,7 +22,7 @@ switch ($op) {
         $condicion=$condicion."where co_fecha like '%".$filtro."%' OR estado like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM cobro".$condicion );
+            $resultqry = mysqli_query($con,"select p.prop_nombre ,p.prop_apellido ,c.co_fecha ,c.co_id ,c.co_valortotal ,c.estado ,c.prop_id,c.sumacobro from propietario p,cobro c where p.prop_id=c.prop_id ".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
