@@ -103,7 +103,7 @@ if( isset($_GET["id"]))
        $('#cc').combobox({
            
            
-            panelHeight:'150',
+            panelHeight:'100',
             
             onSelect: function(rec)
             {
