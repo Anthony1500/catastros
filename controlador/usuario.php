@@ -153,7 +153,7 @@ catch (Exception $e){ //usar logs
             if(!empty($_POST['prop_id'])   ){ 
                 $prop_id = $_POST['prop_id']; 
               
-                $sql = " delete from propietario where prop_id ='$prop_id' "; 
+                $sql = " DELETE propietario , cobro  FROM propietario  INNER JOIN cobro WHERE propietario.prop_id = cobro.prop_id  and propietario.prop_id ='$prop_id' "; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 

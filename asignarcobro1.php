@@ -77,7 +77,7 @@ if( isset($_GET["id"]))
     $totalFilas    =    mysqli_num_rows($result);
     if($totalFilas == 0){   
         ?>
-     <script language="javascript">alert("El propietario seleccionado no tiene terrenos asignados");
+     <script language="javascript">alert("El propietario seleccionado no tiene terrenos actuales asignados");
         window.location='main.php?pag=listapropietario';
         </script>
         
