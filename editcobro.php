@@ -11,7 +11,7 @@ if( isset($_GET["id"]))
 
 ?>
 
-<div id="$id" class="easyui-panel" title="Editar Propiedad" style="width:100%;height:100%; ">
+<div id="$id" class="easyui-panel" title="Editar Cobro" style="width:100%;height:100%; ">
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
@@ -20,20 +20,20 @@ if( isset($_GET["id"]))
                      
 <div  style="margin-bottom:5px">
             
-            <select  name ="propi_id"labelPosition="top"required="true" value="<?php echo $row ['propi_id']?>" class="easyui-combogrid" 
+            <select  name ="prop_id"labelPosition="top"required="true" value="<?php echo $row ['prop_id']?>" class="easyui-combogrid" 
             style="width:50%;"  data-options="
-                    url:'controlador/asignarpropietario.php?op=selectcombo1',
+                    url:'controlador/cobro.php?op=selectcombo',
                     method:'get',
                     
-                    idField:'propi_id',
-                    textField:'propi_id',
+                    idField:'prop_id',
+                    textField:'prop_id',
                     panelHeight:'auto',
                    
-                    label: 'ID Propiedad:',
+                    label: 'ID Propietario:',
                     columns: [[
-                        {field:'propi_id',title:'Codigo',width:80},
-                        {field:'propi_metros',title:'Metros',width:120},
-                        {field:'propi_sector',title:'Sector',width:80,align:'right'},
+                        {field:'prop_id',title:'Codigo',width:80},
+                        {field:'prop_nombre',title:'Nombre',width:120},
+                        {field:'prop_apellido',title:'Apellido',width:80,align:'right'},
               
                                           
                         
@@ -41,7 +41,7 @@ if( isset($_GET["id"]))
                     fitColumns:true,
                     labelWidth:'160px'
                     ">               
-                    <option   value="<?php echo $row ['propi_id']?>" > <?php echo $row ['propi_id']?></option>  
+                    <option   value="<?php echo $row ['prop_id']?>" > <?php echo $row ['prop_id']?></option>  
             </select>
         </div>     
             <div style="margin-bottom:5px">

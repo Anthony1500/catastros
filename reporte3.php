@@ -117,7 +117,7 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO  ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIEDAD      ');
+		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIETARIO      ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'FECHA   ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
@@ -133,7 +133,7 @@ while($rows = $resultado->fetch_assoc())
 {
 $objPHPExcel->setActiveSheetIndex(0)
 ->setCellValue('A'.$fila, $rows['co_id'])
-->setCellValue('B'.$fila, $rows['propi_id'])
+->setCellValue('B'.$fila, $rows['prop_id'])
 ->setCellValue('C'.$fila, $rows['co_fecha'])
 ->setCellValue('D'.$fila, $rows['co_valortotal'])
 ->setCellValue('E'.$fila, $rows['estado'])

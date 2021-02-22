@@ -1,4 +1,4 @@
-<table id="dg" title="Lista de Terrenos" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
+<table id="dg" title="Lista de Terrenos Asignados" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
             url="controlador/terrenos.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
@@ -26,8 +26,8 @@
     <div id="toolbar">      
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a  href="javascript:void(0)" name="busqueda" class="easyui-linkbutton" onclick="editriego()" data-toggle="tooltip"title="Selecciona un terreno para asignarle un riego." plain="true"  ><img src="imagenes/can.png"> Agregar riego</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" data-toggle="tooltip"title="Selecciona una fila para borrar." onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" data-toggle="tooltip"title="Selecciona una fila para editar." onclick="editterreno()">Editar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" data-toggle="tooltip"title="Selecciona una fila para borrar." onclick="destroyUser()">Eliminar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
     </div>
     

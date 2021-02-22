@@ -20,7 +20,7 @@
         </thead>
     </table> 
    
-    <div id="toolbar">      
+    <div id="toolbar">  
         <input class="easyui-searchbox" data-options="prompt:'Buscar',searcher:buscar  " style="width:250px">
         <a  href="main.php?pag=newpropietario" class="easyui-linkbutton"  iconCls="icon-add"data-toggle="tooltip"title="Nuevo propietario." plain="true"  >Nuevo</a></a>
         <a  href="javascript:void(0)" class="easyui-linkbutton" plain="true"data-toggle="tooltip"title="Selecciona un propietario para asignarle un cobro."  onclick="asignar()" ><img src="imagenes/pay.png"> Asignar Cobro</a>

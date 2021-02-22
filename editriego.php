@@ -11,7 +11,7 @@ if( isset($_GET["id"]))
 
 ?>
 
-<div id="$id" class="easyui-panel" title="Editar Propiedad" style="width:100%;height:100%; ">
+<div id="$id" class="easyui-panel" title="Asignar Riego" style="width:100%;height:100%; ">
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">

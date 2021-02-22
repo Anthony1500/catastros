@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 <th field="riego_id" width="25%">ID Riego </th>               
-                <th field="propi_id" width="25%">ID propietario</th>
+                <th field="propi_id" width="25%">ID propiedad</th>
                 <th field="riego_dias" width="25%">Dias </th>
                 <th field="riego_horas" width="25%">Horas</th>
                 <th field="riego_fecha" width="25%">Fecha</th>

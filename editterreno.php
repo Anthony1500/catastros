@@ -39,8 +39,8 @@ if( isset($_GET["id"]))
         </form>
    
         <div style="text-align:center;padding:5px 0">
-        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
-       <a  href="main.php?pag=listaterrenos" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancel</a>
+        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
+       <a  href="main.php?pag=listaterrenos" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>
  

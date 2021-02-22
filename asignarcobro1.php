@@ -7,7 +7,7 @@ if( isset($_GET["id"]))
 { 
     $id=$_GET["id"];
     $sql = "SELECT p.prop_id, p.prop_nombre, p.prop_apellido, p.prop_edad, p.prop_direccion, p.prop_ecivil, p.prop_correo, p.prop_cedula, p.prop_telefono, sum(t.propi_metros) AS suma
-    FROM terrenosvista t, propietario p, propiedad p2  where p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'";
+    FROM terrenosvista t, propietario p, propiedad p2  where p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'and t.tipodeasignacion='Usuario Actual'";
     $result = mysqli_query($con,$sql);
      
     $totalFilas    =   mysqli_num_rows($result);
@@ -29,21 +29,21 @@ if( isset($_GET["id"]))
            
 
 
-<div style="margin-bottom:5px">
-                <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
+<div style="margin-bottom:5px" >
+                <input name="prop_id"  labelPosition="top"  readonly=»readonly»  value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:25%"/>
             </div>
-            <input class="fantasma" value="Buscar Terreno del Propietario" type="submit" name="busqueda" />
+            <input class="fantasma"   type="hidden"type="submit"  />
 
-            <div style="margin-bottom:20px">
-            <input name="co_fecha" class="easyui-datebox" label="Fecha de cobro:" labelPosition="top"  data-options="formatter:myformatter,parser:myparser" style="width:50%;">
+            <div style="margin-bottom:5px">
+            <input name="co_fecha" class="easyui-datebox" label="Fecha de cobro:" labelPosition="top" required="true"  data-options="formatter:myformatter,parser:myparser" style="width:25%;">
         </div>
         <div style="margin-bottom:5px">
-                <input name="co_valortotal" labelPosition="top"  class="easyui-textbox" label="Valor Total:" style="width:50%"/>
+                <input name="co_valortotal" labelPosition="top"  class="easyui-textbox"  required="true"label="Valor Total:" style="width:25%"/>
             </div>
             
             <div style="margin-bottom:5px">
-                <select id="cc" label="estado:" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="estado">
-                <option  selected="selected" >- Seleccionar -</option>
+                <select id="cc" label="Estado:" labelPosition="top" style="width:25%" required="true" class="easyui-combobox"required="true" name="estado">
+                <option  selected="selected" ></option>
                 <option>Pagado</option>
                 <option>Por pagar</option>
                 
@@ -63,20 +63,21 @@ if( isset($_GET["id"]))
            
       </form>
    
-     
+      
     <?php
- if(isset($_POST['busqueda']))
+   require ('controlador/coneccion.php'); 
+   if( isset($_GET["id"]))
 {
-    $prop_id = $_POST['prop_id'];   
-    
+    //$prop_id = $_POST['prop_id'];   
+    $id=$_GET["id"];
  
-    $sql = "SELECT t.propi_id, t.propi_metros, t.propi_comunidad from terrenosvista t, propietario p, propiedad p2 
-    WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$prop_id'"; 
+    $sql = "SELECT t.propi_id, t.propi_metros, t.propi_comunidad,t.tipodeasignacion from terrenosvista t, propietario p, propiedad p2 
+    WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'and t.tipodeasignacion='Usuario Actual'"; 
     $result= mysqli_query($con,$sql); 
     $totalFilas    =    mysqli_num_rows($result);
     if($totalFilas == 0){   
         ?>
-     <script language="javascript">alert("El propietario no tiene terrenos asignados");
+     <script language="javascript">alert("El propietario seleccionado no tiene terrenos asignados");
         window.location='main.php?pag=listapropietario';
         </script>
         
@@ -86,7 +87,7 @@ if( isset($_GET["id"]))
 
     <table style="margin: 0 auto;width: 50%;height: 100px;" border="2"  >
     <tr><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">ID Propiedad</h6></font></th><th ><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Metros</h6></font></th>
-<th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Comunidad </h6></font></th></tr>
+<th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Comunidad </h6></font></th><th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Tipo de Asignación</h6></font></th></tr>
     
     <?php
     while($impresion=mysqli_fetch_assoc($result))
@@ -95,7 +96,7 @@ if( isset($_GET["id"]))
     
    
 
-<tr><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_id'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_metros'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_comunidad'] ?></h6></font></td></tr>
+<tr><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_id'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_metros'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_comunidad'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['tipodeasignacion'] ?></h6></font></td></tr>
 <?php }} ?>
 </table>
 
@@ -105,7 +106,7 @@ if( isset($_GET["id"]))
         <?php
     
     $sql1 = "SELECT sum(t.propi_metros) AS suma from terrenosvista t, propietario p, propiedad p2 
-    WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$prop_id'"; 
+    WHERE p.prop_id=t.prop_id AND t.propi_id=p2.propi_id AND p.prop_id='$id'and t.tipodeasignacion='Usuario Actual'"; 
     
   
      $res1=mysqli_query($con,$sql1);
@@ -157,7 +158,7 @@ if( isset($_GET["id"]))
 
 </html>
 <div style="text-align:center;padding:5px 0">
-        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" onclick="saveUser1()"  style="width:90px">Guardar</a>
+        <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()"   style="width:90px">Guardar</a>
         <a  href="main.php?pag=listapropietario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
     </div>   
     </div>

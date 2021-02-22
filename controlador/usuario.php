@@ -92,7 +92,7 @@ catch (Exception $e){ //usar logs
                 $sumacobro = $_POST['sumacobro']; 
                 
               
-                $sql = "INSERT INTO cobro (propi_id,co_fecha,co_valortotal,estado,sumacobro) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado','$sumacobro')"; 
+                $sql = "INSERT INTO cobro (prop_id,co_fecha,co_valortotal,estado,sumacobro) VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado','$sumacobro')"; 
                
                 echo $sql;
                 $insert = mysqli_query($con,$sql); 

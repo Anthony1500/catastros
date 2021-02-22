@@ -5,7 +5,7 @@
         <thead>
             <tr>               
             <th field="co_id" width="25%">ID </th>               
-                <th field="propi_id" width="25%">ID Propiedad</th>
+                <th field="prop_id" width="25%">ID Propietario</th>
                 <th field="co_fecha" width="25%">Fecha </th>
                 <th field="co_valortotal" width="25%">Valor Total</th>
                 <th field="estado" width="25%">Estado</th>

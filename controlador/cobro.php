@@ -44,14 +44,14 @@ switch ($op) {
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
             );          
             try{
-                $propi_id = $_POST['propi_id'];   
+                $prop_id = $_POST['prop_id'];   
                 $co_fecha = $_POST['co_fecha']; 
                 $co_valortotal= $_POST['co_valortotal'];   
                 $estado = $_POST['estado']; 
             
                 
-                $sql = "INSERT INTO cobro (propi_id,co_fecha,co_valortotal,estado) 
-                VALUES ('$propi_id','$co_fecha','$co_valortotal','$estado')"; 
+                $sql = "INSERT INTO cobro (prop_id,co_fecha,co_valortotal,estado) 
+                VALUES ('$prop_id','$co_fecha','$co_valortotal','$estado')"; 
                
                
 
@@ -75,22 +75,37 @@ catch (Exception $e){ //usar logs
             echo json_encode($response); 
  break; 
 
+ case 'selectcombo':
+    $resultqry = mysqli_query($con, 'SELECT * FROM propietario ' );
+    if (!$resultqry) {
+    
+    exit;
+    }
+    
+    $items=array();
+ 
+    while($row = mysqli_fetch_object($resultqry)) {
+       array_push($items, $row);
+    }
+  
+    echo json_encode($items);
+    break; 
 
  case 'update':
     $response = array( 
         'status' => 0, 
         'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
     );          
-    if(!empty($_POST['co_id'])&&!empty($_POST['propi_id'])&&!empty($_POST['co_fecha'])&&!empty($_POST['co_valortotal'])&&!empty($_POST['estado'])&&!empty($_POST['sumacobro'])){ 
+    if(!empty($_POST['co_id'])&&!empty($_POST['prop_id'])&&!empty($_POST['co_fecha'])&&!empty($_POST['co_valortotal'])&&!empty($_POST['estado'])&&!empty($_POST['sumacobro'])){ 
                 $co_id = $_POST['co_id'];
-                $propi_id = $_POST['propi_id'];   
+                $prop_id = $_POST['prop_id'];   
                 $co_fecha = $_POST['co_fecha']; 
                 $co_valortotal= $_POST['co_valortotal'];   
                 $estado = $_POST['estado']; 
                 $sumacobro = $_POST['sumacobro']; 
            
         
-                $sql = "UPDATE cobro SET  propi_id='$propi_id',co_fecha='$co_fecha',co_valortotal='$co_valortotal',estado='$estado',sumacobro='$sumacobro' WHERE co_id ='$co_id'";
+                $sql = "UPDATE cobro SET  prop_id='$prop_id',co_fecha='$co_fecha',co_valortotal='$co_valortotal',estado='$estado',sumacobro='$sumacobro' WHERE co_id ='$co_id'";
                $update = mysqli_query($con,$sql);
 
      
@@ -115,7 +130,7 @@ catch (Exception $e){ //usar logs
             );          
             if(!empty($_POST['co_id'])  ){ 
                 $co_id = $_POST['co_id']; 
-                $sql = " delete from cobro where co_id ='$co_id'  "; 
+                $sql = " delete from cobro where co_id ='$co_id'"; 
                 $delete = mysqli_query($con,$sql); 
                  
                 if($delete){ 
