@@ -14,11 +14,17 @@ if( isset($_GET["id"]))
 <div id="$id" class="easyui-panel" title="Editar Riego" style="width:100%;height:100%; ">
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
-            <div style="margin-bottom:5px">
+            <div style="margin-bottom:5px" hidden="true">
                 <input name="riego_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['riego_id']?>" class="easyui-textbox" required="true" label="Codigo Riego " style="width:30%"/>
             </div>
             <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:30%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad : (solo lectura) " style="width:30%"/>
+            </div>
+            <div style="margin-bottom:5px">
+                <input name="prop_nombre" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_nombre']?>" class="easyui-textbox" required="true" label="Nombres : (solo lectura) " style="width:30%"/>
+            </div>
+            <div style="margin-bottom:5px">
+                <input name="prop_apellido" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_apellido']?>" class="easyui-textbox" required="true" label="Apellidos : (solo lectura)" style="width:30%"/>
             </div>
             <div style="margin-bottom:5px">
                 <select id="cc"label="Dias :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="riego_dias">

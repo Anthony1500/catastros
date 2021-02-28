@@ -22,7 +22,7 @@ switch ($op) {
         $condicion=$condicion."where riego_dias like '%".$filtro."%' OR riego_fecha like '%".$filtro."%' ";
         
         }
-            $resultqry = mysqli_query($con,"SELECT * FROM riego".$condicion );
+            $resultqry = mysqli_query($con,"SELECT * from riego".$condicion );
             if (!$resultqry) {
             echo json_encode("Ocurrió un error en la consulta");
             exit;
@@ -47,12 +47,14 @@ switch ($op) {
                 $propi_id = $_POST['propi_id'];   
                 $riego_dias = $_POST['riego_dias']; 
                 $riego_horas= $_POST['riego_horas'];   
-                $riego_fecha = $_POST['riego_fecha']; 
+                $riego_fecha = $_POST['riego_fecha'];
+                $prop_nombre = $_POST['prop_nombre']; 
+                $prop_apellido = $_POST['prop_apellido'];  
                 $riego_observaciones = $_POST['riego_observaciones'];  
                  
                 
-                $sql = "INSERT INTO riego (propi_id,riego_dias,riego_horas,riego_fecha,riego_observaciones) 
-                VALUES ('$propi_id','$riego_dias','$riego_horas','$riego_fecha','$riego_observaciones')"; 
+                $sql = "INSERT INTO riego (propi_id,riego_dias,riego_horas,prop_nombre,prop_apellido,riego_fecha,riego_observaciones) 
+                VALUES ('$propi_id','$riego_dias','$riego_horas','$prop_nombre','$prop_apellido','$riego_fecha','$riego_observaciones')"; 
                
                
 
@@ -87,10 +89,12 @@ catch (Exception $e){ //usar logs
                 $riego_dias = $_POST['riego_dias']; 
                 $riego_horas= $_POST['riego_horas'];   
                 $riego_fecha = $_POST['riego_fecha']; 
+                $prop_nombre = $_POST['prop_nombre']; 
+                $prop_apellido = $_POST['prop_apellido']; 
                 $riego_observaciones = $_POST['riego_observaciones'];   
            
         
-                $sql = "UPDATE riego SET  propi_id='$propi_id',riego_dias='$riego_dias',riego_horas='$riego_horas',riego_fecha='$riego_fecha',riego_observaciones='$riego_observaciones' WHERE riego_id ='$riego_id'";
+                $sql = "UPDATE riego SET  propi_id='$propi_id',riego_dias='$riego_dias',prop_nombre='$prop_nombre',prop_apellido='$prop_apellido',riego_horas='$riego_horas',riego_fecha='$riego_fecha',riego_observaciones='$riego_observaciones' WHERE riego_id ='$riego_id'";
                $update = mysqli_query($con,$sql);
 
      

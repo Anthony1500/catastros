@@ -14,7 +14,7 @@ if( isset($_GET["id"]))
 <div id="$id" class="easyui-panel" title="Datos Propietario" style="width:100%;height:100%; ">
 <form id="frmequipo" method="post"     style="margin:0;padding:20px 50px">
            
-            <div style="margin-bottom:5px">
+            <div style="margin-bottom:5px"hidden="true">
                 <input name="prop_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:50%"/>
             </div>
             <div style="margin-bottom:5px">
@@ -73,7 +73,7 @@ if( isset($_GET["id"]))
        $('#cc').combobox({
            
            
-           panelHeight:'150',
+           panelHeight:'166',
            
            onSelect: function(rec)
            {

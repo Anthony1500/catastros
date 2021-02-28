@@ -2,11 +2,11 @@
             url="controlador/comunidad.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
-            <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" ><img icon="20" src="./imagenes/volver.png"  />Regresar</a>
+            
         <thead>
             <tr>               
-            <th field="comu_id" width="15%">ID Comunidad</th>
-                <th field="comu_nombre" width="50%">Comunidades</th>
+            <th align="center" field="comu_id" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID Comunidad</th>
+                <th align="center" field="comu_nombre" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Comunidades</th>
                 
                             
                 

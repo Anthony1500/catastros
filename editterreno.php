@@ -13,17 +13,17 @@ if( isset($_GET["id"]))
 <form id="frmUSuario" method="post"     style="margin:0;padding:20px 50px">
            
 
-            <div style="margin-bottom:5px">
-                <input name="propro_codigo" readonly=»readonly»  value="<?php echo $row['propro_codigo'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Codigo:" style="width:50%">
+            <div style="margin-bottom:5px" hidden="true">
+                <input name="propro_codigo" hidden="true" readonly=»readonly»  value="<?php echo $row['propro_codigo'] ?>" labelPosition="top" class="easyui-textbox" required="true" label="Codigo:" style="width:15%">
             </div>
             <div style="margin-bottom:5px">
-                <input name="prop_nombre"  readonly=»readonly» value="<?php echo $row['prop_nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombres Completos:" style="width:50%" >
+                <input name="prop_nombre"  readonly=»readonly» value="<?php echo $row['prop_nombre'] ?>" labelPosition="top" value="<?php echo $row['nombre'] ?>" class="easyui-textbox" required="true" label="Nombres Completos : (solo lectura)" style="width:18%" >
             </div> 
             <div style="margin-bottom:5px">
-                <input name="prop_apellido" readonly=»readonly» value="<?php echo $row['prop_apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="Apellidos Completos:" style="width:50%" >
+                <input name="prop_apellido" readonly=»readonly» value="<?php echo $row['prop_apellido'] ?>"  labelPosition="top" class="easyui-textbox" required="true" label="Apellidos Completos : (solo lectura)" style="width:18%" >
             </div> 
             <div  style="margin-bottom:5px">
-            <select id="cc" name="tipodeasignacion" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Tipo de Usuario :"  style="width:50%">
+            <select id="cc" name="tipodeasignacion" labelPosition="top" class="easyui-combobox" name="dept"   value="true" label="Tipo de Usuario :"  style="width:15%">
             
             
         <option   value="<?php echo $row ['tipodeasignacion']?>" > <?php echo $row ['tipodeasignacion']?></option>

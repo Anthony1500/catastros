@@ -149,12 +149,29 @@ catch (Exception $e){ //usar logs
         $response = array( 
                 'status' => 0, 
                 'msg' =>  '  Se produjeron algunos problemas. Inténtalo de nuevo.' 
-            );          
+            );
             if(!empty($_POST['prop_id'])   ){ 
                 $prop_id = $_POST['prop_id']; 
               
-                $sql = " DELETE propietario , cobro  FROM propietario  INNER JOIN cobro WHERE propietario.prop_id = cobro.prop_id  and propietario.prop_id ='$prop_id' "; 
-                $delete = mysqli_query($con,$sql); 
+                
+                $sql1 = "SELECT * FROM  cobro where
+                 prop_id='$prop_id' ";
+                $result = mysqli_query($con, $sql1);
+                if ($result == false) {
+                    echo  "Ocurrió un error en la consulta" ;
+    
+                   exit;
+                }  
+                $row = mysqli_fetch_assoc($result) ;
+                if( isset($row['prop_id']) == $prop_id){
+                   
+                    $sql2 = " DELETE propietario , cobro  FROM propietario  INNER JOIN cobro WHERE propietario.prop_id = cobro.prop_id  and propietario.prop_id ='$prop_id' "; 
+                $delete = mysqli_query($con,$sql2); 
+                }else{
+                    $sql = " DELETE   FROM propietario   WHERE propietario.prop_id ='$prop_id' "; 
+                    $delete = mysqli_query($con,$sql);
+                } 
+                
                  
                 if($delete){ 
                     $response['status'] = 1; 
@@ -162,7 +179,13 @@ catch (Exception $e){ //usar logs
                 } 
             }else{ 
                 $response['msg'] = 'Por favor complete todos los campos obligatorios.'; 
-            }             
+            }        
+            
+              
+                
+                 
+                
+                
             echo json_encode($response); 
  break; 
  

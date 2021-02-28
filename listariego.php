@@ -4,12 +4,14 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="riego_id" width="25%">ID Riego </th>               
-                <th field="propi_id" width="25%">ID propiedad</th>
-                <th field="riego_dias" width="25%">Dias </th>
-                <th field="riego_horas" width="25%">Horas</th>
-                <th field="riego_fecha" width="25%">Fecha</th>
-                <th field="riego_observaciones" width="25%">Observaciones</th>
+                <th hidden="true"field="riego_id" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID Riego </th>               
+                
+                <th align="center"field="riego_fecha" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Fecha</th>
+                <th align="center"field="propi_id" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID propiedad</th>
+                <th align="center"field="riego_dias" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Dias </th>
+                <th align="center"field="riego_horas" width="12%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Horas</th>
+               
+                <th align="center"field="riego_observaciones" width="59%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Observaciones</th>
                
             </tr>
 

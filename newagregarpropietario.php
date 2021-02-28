@@ -16,7 +16,7 @@ if( isset($_GET["id"]))
 
 
 <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:50%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad : (solo lectura) " style="width:50%"/>
             </div>
            
             <div  style="margin-bottom:5px">
@@ -60,9 +60,9 @@ if( isset($_GET["id"]))
         </div>
             
             
-           
+       
       </form>
-   
+              
         <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
         <a  href="main.php?pag=listapropiedad" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
@@ -99,7 +99,8 @@ if( isset($_GET["id"]))
             
            }
        });
-        function saveUser(){              
+        function saveUser(){ 
+         
            $('#frmpro').form('submit',{
                 url: 'controlador/asignarpropietario.php?op=insert',
                 onSubmit: function(){

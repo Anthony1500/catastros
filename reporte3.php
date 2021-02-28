@@ -7,7 +7,7 @@ noCli();
 require_once 'Classes/PHPExcel.php';
 require ('controlador/coneccion.php');
 require_once 'controlador/mostrar.php';
-$sql = "SELECT * FROM cobro";
+$sql = "select * from propietario p INNER JOIN cobro c ON p.prop_id=c.prop_id";
 	$resultado = mysqli_query($con,$sql);
 $fila = 7; //Establecemos en que fila inciara a imprimir los datos
 $gdImage = imagecreatefrompng('imagenes/logoecuador.png');
@@ -115,9 +115,9 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');
 		$objPHPExcel->getActiveSheet()->setCellValue('B3', '   REPORTE DE COBRO');
 		$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO  ');
+		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'NOMBRES ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIETARIO      ');
+		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'APELLIDOS      ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'FECHA   ');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
@@ -132,8 +132,8 @@ $i = 2;
 while($rows = $resultado->fetch_assoc())
 {
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue('A'.$fila, $rows['co_id'])
-->setCellValue('B'.$fila, $rows['prop_id'])
+->setCellValue('A'.$fila, $rows['prop_nombre'])
+->setCellValue('B'.$fila, $rows['prop_apellido'])
 ->setCellValue('C'.$fila, $rows['co_fecha'])
 ->setCellValue('D'.$fila, $rows['co_valortotal'])
 ->setCellValue('E'.$fila, $rows['estado'])

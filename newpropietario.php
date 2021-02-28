@@ -18,7 +18,7 @@
         
             <div style="margin-bottom:5px">
                 <select id="cc"label="Estado Civil :" labelPosition="top" style="width:50%" class="easyui-combobox"required="true" name="prop_ecivil">
-                <option  selected="selected" >- Seleccionar -</option>
+                <option  selected="selected" ></option>
                 <option>Soltero</option>
                 <option>Casado</option>
                 <option>Viudo</option>

@@ -4,14 +4,14 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>   
-            <th field="prop_nombre" width="25%">Nombre</th>
-                <th field="prop_apellido" width="25%">Apellido</th>            
-            <th field="co_id" width="25%">ID </th>               
-                <th field="prop_id" width="25%">ID Propietario</th>
-                <th field="co_fecha" width="25%">Fecha </th>
-                <th field="co_valortotal" width="25%">Valor Total</th>
-                <th field="estado" width="25%">Estado</th>
-                <th field="sumacobro" width="25%">Suma de los metros</th>
+            <th align="center" field="prop_nombre" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Nombres</th>
+                <th align="center" field="prop_apellido" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Apellidos</th>            
+            <th align="center" hidden="true"field="co_id" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID </th>               
+                <th align="center" hidden="true"field="prop_id" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID Propietario</th>
+                <th align="center" field="co_fecha" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Fecha </th>
+                <th align="center"field="co_valortotal" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Valor Total</th>
+                <th align="center"field="estado" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Estado</th>
+                <th align="center"field="sumacobro" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Suma de los metros</th>
                
                
             </tr>

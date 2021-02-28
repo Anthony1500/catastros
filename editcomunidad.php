@@ -15,7 +15,7 @@ if( isset($_GET["id"]))
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="comu_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['comu_id']?>" class="easyui-textbox" required="true" label="Código Comunidad " style="width:20%"/>
+                <input name="comu_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['comu_id']?>" class="easyui-textbox" required="true" label="Código Comunidad : (solo lectura)" style="width:17%"/>
             </div>
                      
 

@@ -7,11 +7,11 @@
         <thead>
         <tr>    
                   
-                <th field="cod_log" width="25%">CODIGO</th>
-                <th field="nombre" width="25%">NOMBRES</th>
-                <th field="apellido" width="25%">APELLIDOS</th>
-                <th field="usuario" width="25%">USUARIO</th>
-                <th field="contraseña" width="25%">CONTRASEÑA</th>
+                <th align="center" field="cod_log" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">CODIGO</th>
+                <th align="center"field="nombre" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Nombres</th>
+                <th align="center"field="apellido" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Apellidos</th>
+                <th align="center"field="usuario" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Usuario</th>
+                <th align="center"field="contraseña" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Contraseña</th>
              
                 
             </tr>

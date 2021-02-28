@@ -62,7 +62,7 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');//Logotipo
 	$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
 	$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
 	$objDrawing->setHeight(100);
-	$objDrawing->setCoordinates('S1');
+	$objDrawing->setCoordinates('R1');
 	$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 	$estiloTituloReporte = array(
 		'font' => array(
@@ -138,9 +138,9 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');//Logotipo
 		$objPHPExcel->getActiveSheet()->setCellValue('D3', 'REPORTE RIEGO');
 		$objPHPExcel->getActiveSheet()->mergeCells('D3:E3');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'CODIGO RIEGO');
+		$objPHPExcel->getActiveSheet()->setCellValue('A6', 'NOMBRES');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'CODIGO PROPIEDAD');
+		$objPHPExcel->getActiveSheet()->setCellValue('B6', 'APELLIDOS');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->setCellValue('C6', 'DIAS');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
@@ -151,42 +151,41 @@ $gdImage1 = imagecreatefrompng('imagenes/logoagua.png');//Logotipo
 		$objPHPExcel->getActiveSheet()->setCellValue('F6', 'FECHA');
 		
 
-        $objPHPExcel->getActiveSheet()->getStyle('H1:S5')->applyFromArray($estiloTituloReporte);
-		$objPHPExcel->getActiveSheet()->getStyle('H6:S6')->applyFromArray($estiloTituloColumnas);
+        $objPHPExcel->getActiveSheet()->getStyle('H1:R5')->applyFromArray($estiloTituloReporte);
+		$objPHPExcel->getActiveSheet()->getStyle('H6:R6')->applyFromArray($estiloTituloColumnas);
 		
 		$objPHPExcel->getActiveSheet()->setCellValue('L3', 'REPORTE TERRENOS ');
 		$objPHPExcel->getActiveSheet()->mergeCells('L3:N3');
+		
+		$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+		$objPHPExcel->getActiveSheet()->setCellValue('H6', 'NOMBRES');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('H6', 'CODIGO PROPIEDAD');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
-		$objPHPExcel->getActiveSheet()->setCellValue('I6', 'NOMBRE');
+		$objPHPExcel->getActiveSheet()->setCellValue('I6', 'APELLIDOS');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('J6', 'APELLIDO');
+		$objPHPExcel->getActiveSheet()->setCellValue('J6', 'CEDULA');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('K6', 'CEDULA');
+		$objPHPExcel->getActiveSheet()->setCellValue('K6', 'METROS m²');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('L6', 'METROS m²');
+		$objPHPExcel->getActiveSheet()->setCellValue('L6', 'LONGITUD');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('M6', 'LONGITUD');
+		$objPHPExcel->getActiveSheet()->setCellValue('M6', 'LATITUD');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('N6', 'LATITUD');
+		$objPHPExcel->getActiveSheet()->setCellValue('N6', 'CIUDAD');
 		$objPHPExcel->getActiveSheet()->getColumnDimension('O')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('O6', 'CIUDAD');
-		$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(10);
-        $objPHPExcel->getActiveSheet()->setCellValue('P6', 'PARROQUIA');
+        $objPHPExcel->getActiveSheet()->setCellValue('O6', 'PARROQUIA');
+        $objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(10);
+        $objPHPExcel->getActiveSheet()->setCellValue('P6', 'TIPO DE ASIGNACIÓN');
         $objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(10);
-        $objPHPExcel->getActiveSheet()->setCellValue('Q6', 'TIPO DE ASIGNACIÓN');
+        $objPHPExcel->getActiveSheet()->setCellValue('Q6', 'COMUNIDAD');
         $objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(10);
-        $objPHPExcel->getActiveSheet()->setCellValue('R6', 'TERRENO CODIGO');
-        $objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(10);
-		$objPHPExcel->getActiveSheet()->setCellValue('S6', 'FECHA DE ASIGNACIÓN');
+		$objPHPExcel->getActiveSheet()->setCellValue('R6', 'FECHA DE ASIGNACIÓN');
 
 $i = 2;
 while($rows = $resultado->fetch_assoc() )
 {
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue('A'.$fila, $rows['riego_id'])
-->setCellValue('B'.$fila, $rows['propi_id'])
+->setCellValue('A'.$fila, $rows['prop_nombre'])
+->setCellValue('B'.$fila, $rows['prop_apellido'])
 ->setCellValue('C'.$fila, $rows['riego_dias'])
 ->setCellValue('D'.$fila, $rows['riego_horas'])
 ->setCellValue('E'.$fila, $rows['riego_observaciones'])
@@ -198,22 +197,22 @@ $objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:F".$fila)
 while( $row = $resultado1->fetch_assoc())
 {
 $objPHPExcel->setActiveSheetIndex(0)
-->setCellValue('H'.$fila1, $row['propi_id'])
-->setCellValue('I'.$fila1, $row['prop_nombre'])
-->setCellValue('J'.$fila1, $row['prop_apellido'])
-->setCellValue('K'.$fila1, $row['prop_cedula'])
-->setCellValue('L'.$fila1, $row['propi_metros'])
-->setCellValue('M'.$fila1, $row['propi_longitud'])
-->setCellValue('N'.$fila1, $row['propi_latitud'])
-->setCellValue('O'.$fila1, $row['propi_ciudad'])
-->setCellValue('P'.$fila1, $row['propi_parroquia'])
-->setCellValue('Q'.$fila1, $row['tipodeasignacion'])
-->setCellValue('R'.$fila1, $row['propro_codigo'])
-->setCellValue('S'.$fila1, $row['fechadeasignacion']);
+
+->setCellValue('H'.$fila1, $row['prop_nombre'])
+->setCellValue('I'.$fila1, $row['prop_apellido'])
+->setCellValue('J'.$fila1, $row['prop_cedula'])
+->setCellValue('K'.$fila1, $row['propi_metros'])
+->setCellValue('L'.$fila1, $row['propi_longitud'])
+->setCellValue('M'.$fila1, $row['propi_latitud'])
+->setCellValue('N'.$fila1, $row['propi_ciudad'])
+->setCellValue('O'.$fila1, $row['propi_parroquia'])
+->setCellValue('P'.$fila1, $row['tipodeasignacion'])
+->setCellValue('Q'.$fila1, $row['propi_comunidad'])
+->setCellValue('R'.$fila1, $row['fechadeasignacion']);
 $fila1++; //Sumamos 1 para pasar a la siguiente fila
 }
 $fila1 = $fila1-1;
-$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "H7:S".$fila1);
+$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "H7:R".$fila1);
 	
 	$filaGrafica = $fila+2;
 	// definir origen de los valores

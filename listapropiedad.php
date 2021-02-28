@@ -4,18 +4,19 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="propi_id" width="15%">Codigo Propiedad</th>
+                <th align="center" field="propi_id" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID Propiedad</th>
                 
-                <th field="propi_metros" width="25%">Metros m²</th>
-                <th field="propi_longitud" width="25%">Longitud</th>
-                <th field="propi_latitud" width="25%">Latitud</th>
-                <th field="utm" width="15%">coordenadas UTM</th>
-                <th field="propi_ciudad" width="25%">Ciudad</th>
-                <th field="propi_parroquia" width="15%">Parroquia</th>
-                <th field="propi_comunidad" width="25%">Comunidad</th>
-                <th field="propi_sector" width="25%">Sector</th>
-                <th field="propi_calleprincipal" width="25%">Calle Principal</th>
-                <th field="propi_callesecundaria" width="25%">Calle Secundaria</th>
+                <th align="center"field="propi_metros" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Metros m²</th>
+                <th align="center"field="propi_parroquia" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Parroquia</th>
+                <th align="center"field="propi_comunidad" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Comunidad</th>
+                <th align="center"field="propi_sector" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Sector</th>
+                <th align="center"field="propi_longitud" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Longitud</th>
+                <th align="center"field="propi_latitud" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Latitud</th>
+                <th align="center"field="utm" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Cordenadas UTM</th>
+                <th align="center"field="propi_ciudad" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Ciudad</th>
+                
+                <th align="center"field="propi_calleprincipal" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Calle Principal</th>
+                <th align="center"field="propi_callesecundaria" width="25%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Calle Secundaria</th>
                
                 
                 
@@ -36,7 +37,7 @@
         
         
         <a  href="javascript:void(0)" class="easyui-linkbutton"  plain="true" data-toggle="tooltip"title="Selecciona una propiedad para buscar en el mapa."  onclick="mapa()"><img src="imagenes/map.png"> Busqueda en el Mapa</a>
-        <a href="main.php?pag=comunidad"  class="easyui-linkbutton"   plain="true"  ><img src="imagenes/comunidad.png"> Agregar comunidad</a>
+       
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="refrescar()">Refrescar</a>
         
     </div>

@@ -4,15 +4,16 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>               
-                <th field="prop_id" width="25%">Codigo</th>
-                <th field="prop_nombre" width="25%">Nombres</th>
-                <th field="prop_apellido" width="25%">Apellidos</th>
-                <th field="prop_edad" width="25%">Edad</th>
-                <th field="prop_direccion" width="25%">Direccion</th>
-                <th field="prop_ecivil" width="25%">Estado Civil</th>
-                <th field="prop_correo" width="25%">Correo</th>
-                <th field="prop_cedula" width="25%">Cedula</th>
-                <th field="prop_telefono" width="25%">Telefono</th>
+                <th align="center"hidden="true" field="prop_id" width="25%">Codigo</th>
+                <th align="center"field="prop_nombre" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Nombres</th>
+                <th align="center"field="prop_apellido" width="15%"><font color="Black"size="2"face="Comic Sans MS,Arial,Verdana">Apellidos</th>
+                <th align="center"field="prop_cedula" width="10%"><font color="Black"size="2"face="Comic Sans MS,arial">Nº Cédula</th>
+                <th align="center" field="prop_edad" width="9%"><font color="Black"size="2"face="Comic Sans MS,arial">Edad</th>
+                <th align="center"field="prop_direccion" width="29%"><font color="Black"size="2"face="Comic Sans MS,arial">Dirección</th>
+                <th align="center"field="prop_ecivil" width="9%"><font color="Black"size="2"face="Comic Sans MS,arial">Estado Civil</th>
+                <th align="center"field="prop_correo" width="17%"><font color="Black"size="2"face="Comic Sans MS,arial">Correo</th>
+                
+                <th align="center"field="prop_telefono" width="10%"><font color="Black"size="2"face="Comic Sans MS,arial">Teléfono</th>
                
             </tr>
 

@@ -15,8 +15,9 @@ if( isset($_GET["id"]))
 <form id="frmpro" method="post"     style="margin:0;padding:20px 50px">
            
             <div style="margin-bottom:5px">
-                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo Propiedad " style="width:30%"/>
+                <input name="propi_id" labelPosition="top" readonly=»readonly» value="<?php echo $row ['propi_id']?>" class="easyui-textbox" required="true" label="Codigo de la Propiedad : (solo lectura)" style="width:30%"/>
             </div>
+           
             <div style="margin-bottom:5px">
                 <select id="cc"label="Dias :" labelPosition="top" style="width:30%" class="easyui-combobox"required="true" name="riego_dias">
                 <option value="none" selected disabled hidden> 

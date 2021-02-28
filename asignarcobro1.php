@@ -29,14 +29,21 @@ if( isset($_GET["id"]))
            
 
 
-<div style="margin-bottom:5px" >
-                <input name="prop_id"  labelPosition="top"  readonly=»readonly»  value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:25%"/>
+<div style="margin-bottom:5px" hidden="true" >
+                <input name="prop_id" hidden="true" labelPosition="top"  readonly=»readonly»  value="<?php echo $row ['prop_id']?>" class="easyui-textbox" required="true" label="Codigo Propietario:" style="width:25%"/>
             </div>
+            <div style="margin-bottom:5px">
+            <input name="prop_nombre" class="easyui-textbox" label="Nombre : (solo lectura)" readonly=»readonly» value="<?php echo $row ['prop_nombre']?>"labelPosition="top" required="true"   style="width:25%;">
+        </div>
+        <div style="margin-bottom:5px">
+            <input name="prop_apellido" class="easyui-textbox" label="Apellido : (solo lectura)" readonly=»readonly» value="<?php echo $row ['prop_apellido']?>"labelPosition="top" required="true"   style="width:25%;">
+        </div>
             <input class="fantasma"   type="hidden"type="submit"  />
 
             <div style="margin-bottom:5px">
             <input name="co_fecha" class="easyui-datebox" label="Fecha de cobro:" labelPosition="top" required="true"  data-options="formatter:myformatter,parser:myparser" style="width:25%;">
         </div>
+
         <div style="margin-bottom:5px">
                 <input name="co_valortotal" labelPosition="top"  class="easyui-textbox"  required="true"label="Valor Total:" style="width:25%"/>
             </div>
@@ -53,7 +60,7 @@ if( isset($_GET["id"]))
 
 
             <div style="margin-bottom:5px">
-                <input name="sumacobro"  value="<?php echo $row ['suma']?>"  labelPosition="top"  class="easyui-textbox"  readonly=»readonly» label="Suma de los metros:" style="width:25%"/>
+                <input name="sumacobro"  value="<?php echo $row ['suma']?>"  labelPosition="top"  class="easyui-textbox"  readonly=»readonly» label="Suma de los metros : (solo lectura)" style="width:25%"/>
             </div>
 
 
@@ -84,20 +91,23 @@ if( isset($_GET["id"]))
         <?php
         }else{
     ?>
-
+<th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Datos patrimoniales.</h6></font></th>
     <table style="margin: 0 auto;width: 50%;height: 100px;" border="2"  >
-    <tr><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">ID Propiedad</h6></font></th><th ><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Metros</h6></font></th>
+    <tr><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Propiedades</h6></font></th><th><font color="Black"face="Comic Sans MS,arial"><h6 align="center">ID Propiedad</h6></font></th><th ><font color="Black"face="Comic Sans MS,arial"><h6 align="center">Metros</h6></font></th>
 <th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Comunidad </h6></font></th><th > <font color="Black"face="Comic Sans MS,arial"><h6 align="center">Tipo de Asignación</h6></font></th></tr>
     
     <?php
+    $index = 1;
     while($impresion=mysqli_fetch_assoc($result))
     {
         ?>
     
    
 
-<tr><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_id'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_metros'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_comunidad'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['tipodeasignacion'] ?></h6></font></td></tr>
-<?php }} ?>
+<tr><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $index; ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_id'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_metros'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['propi_comunidad'] ?></h6></font></td><td><font color="Blue"face="Comic Sans MS,arial"><h6 align="center"><?php echo $impresion['tipodeasignacion'] ?></h6></font></td></tr>
+<?php
+$index ++;
+}} ?>
 </table>
 
 
@@ -157,6 +167,8 @@ if( isset($_GET["id"]))
 </body>
 
 </html>
+&nbsp;
+&nbsp;
 <div style="text-align:center;padding:5px 0">
         <a href="javascript:void(0)" id='btnSave' class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()"   style="width:90px">Guardar</a>
         <a  href="main.php?pag=listapropietario" class="easyui-linkbutton" iconCls="icon-cancel" style="width:90px">Cancelar</a>
@@ -184,7 +196,7 @@ if( isset($_GET["id"]))
         }
 
 
-
+      
        $('#cc').combobox({
            
            

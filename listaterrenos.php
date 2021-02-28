@@ -1,23 +1,24 @@
-<table id="dg" title="Lista de Terrenos Asignados" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
+<table id="dg" title="Lista de Terrenos Asignados" class="easyui-datagrid" style="width:auto;height:auto; margin:10px;"
             url="controlador/terrenos.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="propro_codigo" width="25%">ID terrenos </th>               
-                <th field="prop_nombre" width="25%">Nombres</th>
-                <th field="prop_apellido" width="25%">Apellidos </th>
-                <th field="prop_cedula" width="25%">Cédula</th>
-                <th field="propi_comunidad" width="25%">Comunidad</th>
-                <th field="propi_id" width="25%">ID Propiedad</th>
-                <th field="propi_metros" width="25%">Metros m²</th>
-                <th field="propi_latitud" width="25%">Latitud</th>
-                <th field="propi_longitud" width="25%">Longuitud</th>
-                <th field="propi_ciudad" width="25%">Ciudad</th>
-                <th field="propi_parroquia" width="25%">Parroquia</th>
-                <th field="tipodeasignacion" width="25%" >Tipo de Asignación</th>
+            <th align="center" field="propi_id" width="11%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID Propiedad</th>
+                <th align="center"hidden="true"field="riego_id" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">ID  </th>               
+                <th align="center"field="prop_nombre" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Nombres</th>
+                <th align="center"field="prop_apellido" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Apellidos </th>
+                <th align="center"field="prop_cedula" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Nº Cédula</th>
+                <th align="center"field="propi_comunidad" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Comunidad</th>
+                
+                <th align="center"field="propi_metros" width="10%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Metros m²</th>
+                <th align="center"field="propi_latitud" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Latitud</th>
+                <th align="center"field="propi_longitud" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Longuitud</th>
+                <th align="center"field="propi_ciudad" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Ciudad</th>
+                <th align="center"field="propi_parroquia" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Parroquia</th>
+                <th align="center"field="tipodeasignacion" width="15%" ><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Tipo de Asignación</th>
              
-                <th field="fechadeasignacion" width="25%">Fecha de Asignación</th>
+                <th align="center"field="fechadeasignacion" width="15%"><font color="Black"size="2"face="Comic Sans MS, Arial, MS Sans Serif">Fecha de Asignación</th>
             </tr>
 
         </thead>

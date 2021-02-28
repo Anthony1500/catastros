@@ -42,12 +42,12 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Ingrese el usuario">
-						<input class="input100" type="text" name="txtusuario" placeholder="Usuario">
+						<input class="input100" required="true" type="text" name="txtusuario" placeholder="Usuario">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Ingrese la contraseña">
-						<input class="input100" type="password" name="txtpassword" placeholder="Contraseña">
+						<input class="input100"required="true" type="password" name="txtpassword" placeholder="Contraseña">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -85,18 +85,25 @@
             $result = mysqli_query($con, $sql);
             if ($result == false) {
                 echo  "Ocurrió un error en la consulta" ;
+
                exit;
             }  
             $row = mysqli_fetch_assoc($result) ;
-            if( isset($row['nombre']) == false){
-                $mensaje ="Usuario y Clave Incorrecto";
+            if( isset($row['usuario']) == null and isset($row['contraseña']) == null ){
+				echo '<script language="javascript">alert("Usuario y Clave Incorrecto");</script>';
+                $mensaje ="Las credenciales ingresadas no coinciden con los datos ya existentes";
+				
             } 
             else{                 
                
 				  $_SESSION['usuario'] = $row['nombre'] ;
 				  $_SESSION['usuario1'] = $row['apellido'] ; 
 				               
-                  header("location: main.php") ;
+                  header("location: main.php?pag=listapropietario") ;
+				   //Libera la memoria del resultado.
+    mysqli_free_result($result);
+
+    
                 }
                    
         }
