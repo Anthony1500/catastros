@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where comu_nombre like '%".$filtro."%' ";
+        $condicion=$condicion."where comu_nombre like '%".$filtro."%' OR comu_id like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM comunidad".$condicion );

@@ -11,6 +11,7 @@ if( !isset($op) )
   echo  json_encode( "No se definió  la variable op");
   exit;
 } 
+
 switch ($op) { 
    
     case 'select':
@@ -18,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-             $condicion=$condicion."where nombre like '%".$filtro."%' OR apellido like '%".$filtro."%' ";
+             $condicion=$condicion."where cod_log like '%".$filtro."%' OR nombre like '%".$filtro."%'OR apellido like '%".$filtro."%'OR usuario like '%".$filtro."%'OR contraseña like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM login".$condicion );

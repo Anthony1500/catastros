@@ -19,7 +19,7 @@ switch ($op) {
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR prop_cedula like '%".$filtro."%' ";
+        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR prop_apellido like '%".$filtro."%'OR prop_edad like '%".$filtro."%'OR prop_direccion like '%".$filtro."%'OR prop_ecivil like '%".$filtro."%'OR prop_correo like '%".$filtro."%'OR prop_cedula like '%".$filtro."%'OR prop_telefono like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM propietario".$condicion );

@@ -12,14 +12,14 @@ if( !isset($op) )
   echo  json_encode( "No se definió  la variable op");
   exit;
 } 
- 
+
 switch ($op) { 
     case 'select':
         $condicion=' ';
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR prop_cedula like '%".$filtro."%' ";
+        $condicion=$condicion."where propi_id like '%".$filtro."%' OR prop_nombre like '%".$filtro."%'OR prop_apellido like '%".$filtro."%'OR prop_cedula like '%".$filtro."%'OR propi_comunidad like '%".$filtro."%'OR propi_metros like '%".$filtro."%'OR propi_latitud like '%".$filtro."%'OR propi_longitud like '%".$filtro."%'OR propi_ciudad like '%".$filtro."%'OR propi_parroquia like '%".$filtro."%'OR tipodeasignacion like '%".$filtro."%'OR fechadeasignacion like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * FROM terrenosvista".$condicion );

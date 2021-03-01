@@ -12,14 +12,14 @@ if( !isset($op) )
   echo  json_encode( "No se definió  la variable op");
   exit;
 } 
- 
+
 switch ($op) { 
     case 'select':
         $condicion=' ';
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where riego_dias like '%".$filtro."%' OR riego_fecha like '%".$filtro."%' ";
+        $condicion=$condicion."where riego_fecha like '%".$filtro."%' OR propi_id like '%".$filtro."%'OR riego_dias like '%".$filtro."%'OR riego_horas like '%".$filtro."%'OR riego_observaciones like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"SELECT * from riego".$condicion );

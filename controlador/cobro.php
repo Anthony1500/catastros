@@ -12,14 +12,14 @@ if( !isset($op) )
   echo  json_encode( "No se definió  la variable op");
   exit;
 } 
- 
+
 switch ($op) { 
     case 'select':
         $condicion=' ';
         if (isset($_POST['filtro'] )){
         $filtro=$_POST['filtro'] ;
 
-        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR estado like '%".$filtro."%' ";
+        $condicion=$condicion."where prop_nombre like '%".$filtro."%' OR prop_apellido like '%".$filtro."%'OR co_fecha like '%".$filtro."%'OR co_valortotal like '%".$filtro."%'OR estado like '%".$filtro."%'OR sumacobro like '%".$filtro."%' ";
         
         }
             $resultqry = mysqli_query($con,"select * from propietario p INNER JOIN cobro c ON p.prop_id=c.prop_id".$condicion );

@@ -1,4 +1,4 @@
-<table id="dg" title="Lista de Propiedad" class="easyui-datagrid" style="width:100%;height:auto; margin:10px;"
+<table id="dg" title="Lista de Propiedad" class="easyui-datagrid" style="width:auto;height:auto; margin:10px;"
             url="controlador/propiedad.php?op=select"
             toolbar="#toolbar" pagination="false" 
             rownumbers="true" fitColumns="true" singleSelect="true">
